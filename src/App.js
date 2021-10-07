@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react'
-import { Route, useHistory, Switch, Redirect } from 'react-router-dom'
+import { Browser as Router, useHistory, Switch, Redirect, Route } from 'react-router-dom';
+import LandingPage from './Home/LandingPage';
 
 function App() {
   const [user, setUser] = useState(null)
@@ -37,7 +38,11 @@ function App() {
 
   return (
     <div className="App">
-      TEAM 5 Rocks!
+      <Router>
+            <Switch>
+              <Route exact path='/' component={LandingPage}/>
+            </Switch>
+      </Router>
     </div>
   );
 }
