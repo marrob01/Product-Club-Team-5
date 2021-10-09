@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react'
-import { Browser as Router, useHistory, Switch, Redirect, Route } from 'react-router-dom';
+import { BrowserRouter, useHistory, Switch, Redirect, Route } from 'react-router-dom';
 import LandingPage from './Home/LandingPage';
 
 function App() {
@@ -38,11 +38,11 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
+      <BrowserRouter>
             <Switch>
               <Route exact path='/' component={LandingPage}/>
             </Switch>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
