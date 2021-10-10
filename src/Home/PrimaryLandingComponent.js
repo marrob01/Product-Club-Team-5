@@ -1,12 +1,11 @@
-import LandingPageVideo from '../Videos/bacteriaBlue.mp4'
+import LandingPageVideo from '../Videos/bacteriaBlue.mp4';
+
 
 function PrimaryLandingComponent() {
 
 
     return (
         <div className="container">
-                   
-
             <div >
                 <video autoPlay loop muted>
                     <source src={LandingPageVideo} type="video/mp4"/>

@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+
 import { useState, useEffect } from 'react'
 import { BrowserRouter, useHistory, Switch, Redirect, Route } from 'react-router-dom';
 import LandingPage from './Home/LandingPage';
