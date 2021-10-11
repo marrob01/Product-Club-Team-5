@@ -1,11 +1,12 @@
 import logo from './logo.svg';
-import './App.css';
+import './style/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState, useEffect } from 'react'
 import Navigation from './Nav.js'
 import Test from './Test.js'
 import { BrowserRouter,  Router, Switch, Route } from "react-router-dom";
-
+import { useState, useEffect } from 'react'
+import LandingPage from './Home/LandingPage';
+import Contact from './Contactpage/Contact';
 
 function App() {
   const [user, setUser] = useState(null)
@@ -46,7 +47,9 @@ function App() {
 
           <Switch>
             <Route exact path="/test" component={Test} />
-            {/* <Route exact path="/about" component={About} />
+            {/* <Route exact path='/' component={LandingPage}/>
+
+            <Route exact path="/about" component={About} />
             <Route exact path="/state" component={StateData} />
             <Route exact path="/federal" component={FederalData} />
             <Route exact path="/test" component={Contact} /> */}
@@ -56,6 +59,8 @@ function App() {
 
         </BrowserRouter >
       TEAM 5 Rocks!
+
+
     </div>
   );
 }
