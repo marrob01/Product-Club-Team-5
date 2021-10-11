@@ -1,6 +1,6 @@
 
 import './style/App.css'
-import Footer from './Global/FooterComponent'
+import Footer from './Global/Footer'
 import { useState, useEffect } from 'react'
 import { Route, useHistory, Switch, Redirect } from 'react-router-dom'
 
