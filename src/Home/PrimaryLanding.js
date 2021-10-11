@@ -1,4 +1,4 @@
-import LandingPageVideo from '../Videos/bacteriaBlue.mp4';
+import Image from '../images/edle121.jpeg'
 
 
 function PrimaryLanding() {
@@ -7,9 +7,7 @@ function PrimaryLanding() {
     return (
         <div className="container">
             <div >
-                <video autoPlay loop muted>
-                    <source src={LandingPageVideo} type="video/mp4"/>
-                </video> 
+                <img src={Image} alt="I man being created by the almighty"/>
             </div>
 
             
