@@ -1,0 +1,16 @@
+.contact-container {
+  display: flex;
+  position: relative;
+ 
+}
+
+.form {
+  position: absolute;
+}
+
+.icon-info-map {
+  /* display: flex; */
+  margin-left: 50%;
+  line-height: 2em;
+}
+
