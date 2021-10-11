@@ -2,6 +2,7 @@
 import './style/App.css'
 import { useState, useEffect } from 'react'
 import { Route, useHistory, Switch, Redirect } from 'react-router-dom'
+import Contact from './Contactpage/Contact'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -10,34 +11,35 @@ function App() {
   const [searchInput, setSearchInput]=useState([])
   const history = useHistory()
   
-  const getData=()=>{
-    fetch('http://localhost:9000/skills'
+  // const getData=()=>{
+  //   fetch('http://localhost:9000/skills'
 
-    ,{
-      headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       }
-    }
-    )
-      .then(function(response){
-        // console.log(response)
-        return response.json();
-      })
-      .then(function(myJson) {
-        console.log(myJson);
-        setData(myJson)
-      });
-  }
-  useEffect(()=>{
-    getData()
-  },[])
+  //   ,{
+  //     headers : { 
+  //       'Content-Type': 'application/json',
+  //       'Accept': 'application/json'
+  //      }
+  //   }
+  //   )
+  //     .then(function(response){
+  //       // console.log(response)
+  //       return response.json();
+  //     })
+  //     .then(function(myJson) {
+  //       console.log(myJson);
+  //       setData(myJson)
+  //     });
+  // }
+  // useEffect(()=>{
+  //   getData()
+  // },[])
 
 
 
   return (
     <div className="App">
       TEAM 5 Rocks!
+      <Contact />
     </div>
   );
 }
