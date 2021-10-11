@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter, useHistory, Switch, Redirect, Route } from 'react-router-dom';
 import LandingPage from './Home/LandingPage';
+import './style/App.css';
+import Contact from './Contactpage/Contact';
 
 function App() {
   const [user, setUser] = useState(null)
@@ -37,6 +39,7 @@ function App() {
 
   return (
     <div className="App">
+
       <BrowserRouter>
             <Switch>
               <Route exact path='/' component={LandingPage}/>
