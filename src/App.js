@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './style/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navigation from './Nav.js'
+import Navigation from './Global/Nav.js'
 import Test from './Test.js'
 import { BrowserRouter,  Router, Switch, Route } from "react-router-dom";
 import { useState, useEffect } from 'react'
@@ -58,7 +58,7 @@ function App() {
           </Switch>
 
         </BrowserRouter >
-      TEAM 5 Rocks!
+      fgdfgfd
 
 
     </div>
