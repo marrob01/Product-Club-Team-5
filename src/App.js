@@ -1,21 +1,26 @@
 
 import './style/App.css'
 import Footer from './Global/Footer'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navigation from './Nav.js'
+import Test from './Test.js'
+import { BrowserRouter,  Router, Switch, Route } from "react-router-dom";
 import { useState, useEffect } from 'react'
-import { Route, useHistory, Switch, Redirect } from 'react-router-dom'
+import LandingPage from './Home/LandingPage';
+import Contact from './Contactpage/Contact';
 
 function App() {
   const [user, setUser] = useState(null)
   const [data,setData]=useState([])
   const [filteredDataList, setFilteredDataList]=useState([])
   const [searchInput, setSearchInput]=useState([])
-  const history = useHistory()
-  
+  // const history = useHistory()
+
   // const getData=()=>{
   //   fetch('http://localhost:9000/skills'
-
+  //
   //   ,{
-  //     headers : { 
+  //     headers : {
   //       'Content-Type': 'application/json',
   //       'Accept': 'application/json'
   //      }
@@ -38,8 +43,25 @@ function App() {
 
   return (
     <div className="App">
+        <BrowserRouter >
+          <Navigation />
+
+          <Switch>
+            <Route exact path="/test" component={Test} />
+            {/* <Route exact path='/' component={LandingPage}/>
+
+            <Route exact path="/about" component={About} />
+            <Route exact path="/state" component={StateData} />
+            <Route exact path="/federal" component={FederalData} />
+            <Route exact path="/test" component={Contact} /> */}
+
+          <Footer />
+          </Switch>
+
+        </BrowserRouter >
       TEAM 5 Rocks!
-      <Footer />
+
+
     </div>
   );
 }
