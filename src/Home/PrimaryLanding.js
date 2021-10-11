@@ -1,7 +1,7 @@
 import LandingPageVideo from '../Videos/bacteriaBlue.mp4';
 
 
-function PrimaryLandingComponent() {
+function PrimaryLanding() {
 
 
     return (
@@ -25,4 +25,4 @@ function PrimaryLandingComponent() {
     )
 }
 
-export default PrimaryLandingComponent;
+export default PrimaryLanding;

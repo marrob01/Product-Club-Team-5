@@ -1,6 +1,6 @@
 
 
-function StateComponent({
+function StateLanding({
         headerThree, 
         headerOne, 
         paragraph, 
@@ -29,4 +29,4 @@ function StateComponent({
     )
 }
 
-export default StateComponent
+export default StateLanding
