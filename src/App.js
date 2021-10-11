@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react'
-import Nava from './Nav.js'
+import Navigation from './Nav.js'
 import Test from './Test.js'
 import { BrowserRouter,  Router, Switch, Route } from "react-router-dom";
 
@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="App">
         <BrowserRouter >
-          <Nava />
+          <Navigation />
 
           <Switch>
             <Route exact path="/test" component={Test} />

@@ -2,7 +2,7 @@ import * as React from "react"
 import { TopNaVData } from "./TopNavData.js"
 
 
-const Nava = () => {
+const Navigation = () => {
 
   return(
     <>
@@ -38,4 +38,4 @@ const Nava = () => {
 
 
 }
-export default Nava
+export default Navigation
