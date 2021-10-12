@@ -9,27 +9,29 @@ import { TiSocialTwitter } from 'react-icons/ti'
 
 function Contact() {
     return (
-        <div className="contact-container">
-            <div className="form">
-                <h3>Leave us a message</h3>
-                <Form>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput4">
-                        {/* <Form.Label>Name:</Form.Label> */}
-                        <Form.Control type="name" placeholder="name" />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                        {/* <Form.Label>Email address:</Form.Label> */}
-                        <Form.Control type="email" placeholder="Email address" />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                        {/* <Form.Label>Your message:</Form.Label> */}
-                        <Form.Control as="textarea" rows={5} placeholder="Your message" />
-                    </Form.Group>
-                </Form>
-                <div className="d-grid gap-2">
-                    <Button variant="primary" size="lg">
-                        Send
-                    </Button>
+        <div>
+            <div className="contact-header">
+                <h1 >Get In Touch</h1>
+            </div>
+            <div className="contact-container">
+                <div className="form">
+                    <h3 className="contact-message">Leave us a message</h3>
+                    <Form>
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput4">
+                            <Form.Control type="name" placeholder="Name" />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                            <Form.Control type="email" placeholder="Email address" />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                            <Form.Control as="textarea" rows={5} placeholder="Your message" />
+                        </Form.Group>
+                    </Form>
+                    <div className="d-grid gap-2">
+                        <Button variant="primary" size="lg">
+                            Send
+                        </Button>
+                    </div>
                 </div>
                 <div className="icon-info-map">
                     <div>

@@ -1,11 +1,12 @@
 
 import './style/App.css'
+import './Contactpage/Contact.css'
 import Footer from './Global/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from './Global/Nav.js'
 import Test from './Test.js'
 import { BrowserRouter,  Router, Switch, Route } from "react-router-dom";
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 import LandingPage from './Home/LandingPage';
 
 import Contact from './Contactpage/Contact';
@@ -63,7 +64,6 @@ function App() {
 
           <Footer />
         </BrowserRouter >
-
 
     </div>
   );
