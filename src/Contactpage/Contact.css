@@ -3,7 +3,6 @@
     text-decoration: underline;
      line-height: 2em;
      text-underline-position: under;
-     /* border-bottom: 3px solid blue; */
     color: blue;
 }
 
@@ -13,8 +12,6 @@
 
 .contact-container {
     display: grid;
-    /* grid-column: auto auto; */
-    /* width: 40vw; */
     grid-template-columns: auto auto auto;
     gap: 40px;
 
@@ -35,8 +32,5 @@
 
 .icon-info-map {
     margin-top: 30%;
-
-    /* grid-column-start: 2; */
-    /* width: 40%; */
     line-height: 2em;
 }
