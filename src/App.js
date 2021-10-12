@@ -7,10 +7,13 @@ import Test from './Test.js'
 import { BrowserRouter,  Router, Switch, Route } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import LandingPage from './Home/LandingPage';
-import Contact from './Contactpage/Contact.js';
-// import About from './About/About.js';
-import StateData from './StatePage/StateData.js';
-import FederalData from './FederalPage/FederalData.js';
+
+import Contact from './Contactpage/Contact';
+import StateData from './StatePage/StateData';
+import FederalData from './FederalPage/FederalData';
+import About from './About/About';
+
+
 
 function App() {
   const [user, setUser] = useState(null)
