@@ -1,12 +1,15 @@
-import logo from './logo.svg';
 import './style/App.css';
+import './Contactpage/Contact.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navigation from './Nav.js'
-import Test from './Test.js'
+import Navigation from './Global/Nav.js';
+import Test from './Test.js';
 import { BrowserRouter,  Router, Switch, Route } from "react-router-dom";
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 import LandingPage from './Home/LandingPage';
 import Contact from './Contactpage/Contact';
+import About from './About/About';
+import StateData from './StatePage/StateData';
+import FederalData from './FederalPage/FederalData';
 
 function App() {
   const [user, setUser] = useState(null)
@@ -48,7 +51,7 @@ function App() {
           <Switch>
             <Route exact path="/test" component={Test} />
             {/* <Route exact path='/' component={LandingPage}/>
-
+            <Route exact path="contact" component={Contact}/>
             <Route exact path="/about" component={About} />
             <Route exact path="/state" component={StateData} />
             <Route exact path="/federal" component={FederalData} />
@@ -58,8 +61,8 @@ function App() {
           </Switch>
 
         </BrowserRouter >
-      TEAM 5 Rocks!
-
+    
+            <Contact />
 
     </div>
   );

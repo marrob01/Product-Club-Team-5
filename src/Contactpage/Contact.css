@@ -1,0 +1,42 @@
+.contact-header {
+    text-align: center;
+    text-decoration: underline;
+     line-height: 2em;
+     text-underline-position: under;
+     /* border-bottom: 3px solid blue; */
+    color: blue;
+}
+
+.contact-message {
+    padding-bottom: 1rem;
+}
+
+.contact-container {
+    display: grid;
+    /* grid-column: auto auto; */
+    /* width: 40vw; */
+    grid-template-columns: auto auto auto;
+    gap: 40px;
+
+}
+
+.form {
+    margin-top: 20%;
+    margin-left: 5%;
+    padding: 30px;
+    line-height: 2em;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.gap-2 {
+
+}
+
+.icon-info-map {
+    margin-top: 30%;
+
+    /* grid-column-start: 2; */
+    /* width: 40%; */
+    line-height: 2em;
+}
