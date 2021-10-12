@@ -8,6 +8,10 @@ import { BrowserRouter,  Router, Switch, Route } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import LandingPage from './Home/LandingPage';
 import Contact from './Contactpage/Contact';
+import StateData from './StatePage/StateData';
+import FederalData from './FederalPage/FederalData';
+import About from './About/About';
+
 
 function App() {
   const [user, setUser] = useState(null)
@@ -49,11 +53,10 @@ function App() {
           <Switch>
             <Route exact path="/test" component={Test} />
             <Route exact path='/' component={LandingPage}/>
-
-            {/* <Route exact path="/about" component={About} />
+            <Route exact path="/about" component={About} />
             <Route exact path="/state" component={StateData} />
             <Route exact path="/federal" component={FederalData} />
-            <Route exact path="/test" component={Contact} /> */}
+            <Route exact path="/test" component={Contact} />
           </Switch>
 
           <Footer />
