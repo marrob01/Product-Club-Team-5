@@ -2,12 +2,15 @@
 import './style/App.css'
 import Footer from './Global/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navigation from './Nav.js'
+import Navigation from './Global/Nav.js'
 import Test from './Test.js'
 import { BrowserRouter,  Router, Switch, Route } from "react-router-dom";
 import { useState, useEffect } from 'react'
 import LandingPage from './Home/LandingPage';
-import Contact from './Contactpage/Contact';
+import Contact from './Contactpage/Contact.js';
+// import About from './About/About.js';
+import StateData from './StatePage/StateData.js';
+import FederalData from './FederalPage/FederalData.js';
 
 function App() {
   const [user, setUser] = useState(null)
@@ -47,17 +50,18 @@ function App() {
           <Navigation />
 
           <Switch>
-            <Route exact path="/test" component={Test} />
             <Route exact path='/' component={LandingPage}/>
 
-            {/* <Route exact path="/about" component={About} />
+            {/* <Route exact path="/about" component={About} /> */}
             <Route exact path="/state" component={StateData} />
             <Route exact path="/federal" component={FederalData} />
-            <Route exact path="/test" component={Contact} /> */}
+            <Route exact path="/contact" component={Contact} />
           </Switch>
 
           <Footer />
         </BrowserRouter >
+
+
     </div>
   );
 }
