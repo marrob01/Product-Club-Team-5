@@ -1,4 +1,12 @@
+.contact-page {
+    border: 2px solid rgb(226, 219, 219);
+    box-shadow: 5px 3px 5px 3px lightgrey;
+    margin: 10%;
+    width: 80%;
+}
+
 .contact-header {
+    margin-top: 20px;
     text-align: center;
     text-decoration: underline;
      line-height: 2em;

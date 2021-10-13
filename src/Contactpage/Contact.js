@@ -9,7 +9,7 @@ import { TiSocialTwitter } from 'react-icons/ti'
 
 function Contact() {
     return (
-        <div>
+        <div className="contact-page">
             <div className="contact-header">
                 <h1 >Get In Touch</h1>
             </div>
