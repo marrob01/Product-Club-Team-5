@@ -1,0 +1,12 @@
+.about-page {
+    margin: 5% 20%;
+}
+
+.about-title {
+    text-align: center;
+}
+
+.about-info {
+    padding: 50px;
+    text-align: justify;
+}
