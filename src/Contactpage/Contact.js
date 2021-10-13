@@ -28,7 +28,7 @@ function Contact() {
                         </Form.Group>
                     </Form>
                     <div className="d-grid gap-2">
-                        <Button variant="primary" size="lg">
+                        <Button id="button" variant="primary" size="lg">
                             Send
                         </Button>
                     </div>
