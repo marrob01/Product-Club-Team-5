@@ -1,4 +1,5 @@
-import Image from '../images/edle121.jpeg';
+import PrimaryImage from '../images/statistics1.png'
+
 import './PrimaryLanding.css';
 
 
@@ -9,7 +10,7 @@ function PrimaryLanding() {
         <div className="container">
             <div>
                 <img 
-                src={Image} 
+                src={PrimaryImage} 
                 alt="I man being created by the almighty"
                 id="image"
                 />
@@ -17,13 +18,11 @@ function PrimaryLanding() {
 
             
             <div>
-                <h3 className="content">ABOUT US</h3>
-                <h1 className="content">Making it easy to research covid funding.</h1>
-                <p className="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <h3 className="content" id="primary-header-three">ABOUT US</h3>
+                <h1 className="content" id="primary-header-one">The USA COVID-19 Budget</h1>
+                <p className="content" id="primary-paragraph">
+                How public institutions such as local hospitals and health care facilities spend the COVID-19 funds 
+                allocated to them can be seen here. To view Covid-19 funding for health care facilities based upon state or federal, you can seek this information below. 
                 </p>
                 <button className="content" id="primary-button">More Info</button>
             </div>

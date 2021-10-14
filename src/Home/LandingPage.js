@@ -1,8 +1,9 @@
 import React from 'react'
 import PrimaryLanding from './PrimaryLanding';
-import StateLanding from './StateLanding';
 import FederalLanding from './StateLanding';
-import Image from '../images/edle121.jpeg';
+import StateLanding from './StateLanding';
+import federalImage from '../images/financial.png';
+import stateImage from '../images/analysis.png';
 import './LandingPage.css';
 
 function Landingpage() {
@@ -12,23 +13,21 @@ function Landingpage() {
             <PrimaryLanding/>
             </div>
             <div className="second-section-container"> 
-                <StateLanding 
-                image={Image} 
-                headerOne="State" 
-                headerThree="Search funding by State" 
-                paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." 
-                button="State Data"
+                <FederalLanding 
+                image={federalImage} 
+                headerOne="Federal Government Allocation Process" 
+                headerThree="Federal" 
+                paragraph="Here you can find the process the Federal govenment takes when allocating funds to various States during this period of COVID-19." 
+                button="Federal Data"
                 />
 
 
-                <FederalLanding 
-                image={Image} 
-                headerOne="Federal" 
-                headerThree="Search Funding by Federal" 
-                paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." 
-                button="Federal Data"
+                <StateLanding 
+                image={stateImage} 
+                headerOne="How The State Government Shares The COVID-19 Funds" 
+                headerThree="State" 
+                paragraph="The way the State government shares the COVID-19 Funds from the government to public institutions can be found here." 
+                button="State Data"
                 />
                 
 

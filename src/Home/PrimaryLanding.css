@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Public+Sans:wght@200&display=swap');
+
+
 .container {
     display: flex;
     gap: 50px;
@@ -6,21 +10,59 @@
     /* flex-wrap: wrap; */
 }
 
+#primary-header-one {
+    font-family: 'Merriweather', Arial;
+    font-weight: bold;
+    font-size: 50px;
+    color: #373F41;
+}
+
+#primary-header-three {
+    color: #3C64B1;
+}
+
+#primary-paragraph {
+    font-family: 'Public Sans', sans-serif;
+    color: #737B7D;
+}
+
 #primary-button {
-    border: 2px solid rgb(0, 71, 177);
+    position: relative;
+    display: block;
+    border: 2px solid #3C64B1;
     border-radius: 1px;
     outline: none;
-    background-color: transparent;
     height: 5vh;
     width: 8vw;
     padding: 0;
+    overflow: hidden;
+    transition: 1s all ease;
 }
 
+#primary-button::before {
+    background: #3C64B1;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+    transition: all 0.6s ease;
+  }
+  
+
+  #primary-button:hover {
+      background-color: #3C64B1;
+      color: white;
+  }
+  
+
 #image {
-    height: 600px;
+    height: 700px;
     width: 700px;
 }
 
 .content {
     padding-top: 40px;
 }
+
