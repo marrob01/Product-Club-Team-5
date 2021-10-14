@@ -17,7 +17,6 @@ import FederalData from './FederalPage/FederalData.js';
 function App(props) {
   const [user, setUser] = useState(null)
   const [federalData,setFederalData]=useState([])
-  const [stateData,setStateData]=useState([])
   const [filteredDataList, setFilteredDataList]=useState([])
   const [searchInput, setSearchInput]=useState([])
   // const history = useHistory()
@@ -41,29 +40,7 @@ function App(props) {
         setFederalData(federalData)
       });
   }
-  const getStateData = ()=>{
-   fetch('http://localhost:9000/state'
-  
-    ,{
-      headers : {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       }
-    }
-    )
-      .then(function(response){
-        console.log(response)
-        return response.json();
-      })
-      .then(function(myJson) {
-        console.log(myJson);
-        setStateData(stateData=myJson)
-      });
-  }
-  useEffect(()=>{
-    getStateData()
-    getFederalData()
-  },[])
+ 
 
 
 
@@ -75,7 +52,7 @@ function App(props) {
           <Switch>
             <Route exact path='/' component={LandingPage}/>
             <Route exact path="/about" component={About} />
-          <Route exact path="/state" component={StateData} state={stateData} />
+          <Route exact path="/state" component={StateData}/>
             <Route exact path="/federal" component={FederalData} />
             <Route exact path="/contact" component={Contact} />
           </Switch>
