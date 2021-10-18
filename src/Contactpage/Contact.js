@@ -11,9 +11,7 @@ function Contact() {
     return (
         <div className="contact-container">
             <div className="form">
-                <h3>Leave us a message</h3>
-                <Form>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput4">
+                <Form.Group className="mb-3" controlId="exampleForm.ControlInput4">
                         {/* <Form.Label>Name:</Form.Label> */}
                         <Form.Control type="name" placeholder="name" />
                     </Form.Group>
@@ -25,7 +23,6 @@ function Contact() {
                         {/* <Form.Label>Your message:</Form.Label> */}
                         <Form.Control as="textarea" rows={5} placeholder="Your message" />
                     </Form.Group>
-                </Form>
                 <div className="d-grid gap-2">
                     <Button variant="primary" size="lg">
                         Send
