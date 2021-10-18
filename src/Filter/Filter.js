@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 
-const stateData = {
-        "grant": {
+const stateData = [
+        {
+            "type" : "grant",
             "awardID": 43342,
             "startDate": "01515001",
             "endDate": "01515001",
@@ -12,8 +13,36 @@ const stateData = {
             "awardAmount": 1,
             "awardType": "String"
         },
-    
-        "directPayment": {
+        {
+            "type" : "directPayment",
+            "awardID": 53873,
+            "startDate": "01515001",
+            "endDate": "01515001",
+            "recipientName": "marcus",
+            "state": "String",
+            "county": "String",
+            "city": "String",
+            "covidObligations": "String",
+            "awardAgency": "String",
+            "awardAmount": 10,
+            "awardType": "String"
+        },
+        {
+            "type" : "directPayment",
+            "awardID": 53873,
+            "startDate": "01515001",
+            "endDate": "01515001",
+            "recipientName": "marcus",
+            "state": "String",
+            "county": "String",
+            "city": "String",
+            "covidObligations": "String",
+            "awardAgency": "String",
+            "awardAmount": 10,
+            "awardType": "String"
+        },
+        {
+            "type" : "directPayment",
             "awardID": 53873,
             "startDate": "01515001",
             "endDate": "01515001",
@@ -26,29 +55,29 @@ const stateData = {
             "awardAmount": 10,
             "awardType": "String"
         }
-}
+]
 
 
 const Filter = () => {
 
-const [filteredData, setFilteredData] = useState(null)
+    const [filteredData, setFilteredData] = useState(null)
 
-useEffect(() => {
-    const filterData = async () => {
-        try {
-            setFilteredData(stateData)
+    useEffect(() => {
+        const filterData = async () => {
+            try {
+                setFilteredData(stateData)
 
-        } catch (err) {
-            console.log(err)
+            } catch (err) {
+                console.log(err)
+            }
         }
-    }
-    filterData()
-}, [])
+        filterData()
+    }, [])
 
-if (filteredData) console.log(filteredData)
+    if (filteredData) console.log(filteredData)
 
-return (
-    <div>
+    return (
+        <div>
                 hi
             </div>
         )
