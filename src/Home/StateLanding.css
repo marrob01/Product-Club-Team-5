@@ -1,0 +1,31 @@
+.state-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 100px;
+    gap: 20px;
+}
+
+.content {
+   position: relative;
+   right: 5px;
+}
+
+#state-header-three {
+    color: rgb(0, 71, 177);
+    font-size: 20px;
+}
+
+#state-button {
+    border: 2px solid rgb(0, 71, 177);
+    border-radius: 1px;
+    outline: none;
+    background-color: transparent;
+    height: 5vh;
+    width: 8vw;
+}
+
+.image {
+    height: 400px;
+    width: 500px;
+}
