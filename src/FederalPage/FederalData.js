@@ -51,37 +51,49 @@ function FederalData() {
         return (
             <div key={i} className="recipient-container">
 
-                  <div id="recipient-name-section"> 
-                        {expandNameContainer ? clickDownArrow: clickRightArrow}
-                        {/* {expandNameContainer } */}
+                  <div id="individual-recipient-container"> 
+                      <div id="recipient-name-section">
+                        <div>
+                            {expandNameContainer ? clickDownArrow: clickRightArrow}
+                            {/* {expandNameContainer } */}
+                        </div>
 
-                        <h2>{federal.grant.recipientName}</h2>
+                            <h2>{federal.grant.recipientName}</h2>
+                      </div>
+                      
+                      <ul>     
+                          <li>{federal.grant.awardAmount}</li>
+                          <li>{federal.grant.awardType}</li>
+                          <li>{federal.grant.startDate}</li>
+                          <li>{federal.grant.endDate}</li>
+                          <li>{federal.grant.County}</li>
+                          <li>{federal.grant.City}</li>
+                          <li>{federal.grant.CovidObligations}</li>
+                      </ul>
                   </div>
-                  <ul>     
-                      <li>{federal.grant.awardAmount}</li>
-                      <li>{federal.grant.awardType}</li>
-                      <li>{federal.grant.startDate}</li>
-                      <li>{federal.grant.endDate}</li>
-                      <li>{federal.grant.County}</li>
-                      <li>{federal.grant.City}</li>
-                      <li>{federal.grant.CovidObligations}</li>
-                  </ul>
-          
             </div>
         )
     })
 
 
     return (
-        <div className="federal-data-container">
-            <div>
-            </div>
-            <div id="data-table-container">
-              <div id="header">
-                <h1>Select</h1>
-                <h1>Name</h1>
+        <div className="federal-container">
+          <div id="federal-header-container">
+            <h1 id="federal-header">ADVANCED FEDERAL DATA SEARCH</h1>
+          </div>
+
+          
+          <div className="federal-data-container">
+                <div>
                 </div>
-            {federalMap}
+
+                <div id="data-table-container">
+                        <div id="header">
+                            <h1>Select</h1>
+                            <h1>Name</h1>
+                        </div>
+                    {federalMap}
+                </div>
             </div>
         </div>
     )
