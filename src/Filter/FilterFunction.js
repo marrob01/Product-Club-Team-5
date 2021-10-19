@@ -28,7 +28,7 @@ const stateData = [
             "awardType": "String"
         },
         {
-            "type" : "directPayment",
+            "type" : "grant",
             "awardID": 53873,
             "startDate": "01515001",
             "endDate": "01515001",
@@ -60,21 +60,32 @@ const stateData = [
 
 const Filter = () => {
 
-    const [filteredData, setFilteredData] = useState(null)
+    const [filteredDataList, setFilteredDataList] = useState(null)
+    const [filter, setFilter] = useState(null)
 
+    const handleFilterSearch = (newFilter) => {
+        // setFilter(newFilter)
+        if (!newFilter) {
+            setFilteredDataList(stateData)
+        } else {
+            let filteredData = stateData.filter(award => award.type === newFilter)
+            setFilteredDataList(filteredData)
+        }
+    }
+    
     useEffect(() => {
         const filterData = async () => {
             try {
-                setFilteredData(stateData)
-
+                handleFilterSearch('directPayment')
             } catch (err) {
                 console.log(err)
             }
         }
         filterData()
     }, [])
+    
+    if (filteredDataList) console.log(filteredDataList)
 
-    if (filteredData) console.log(filteredData)
 
     return (
         <div>
