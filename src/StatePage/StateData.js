@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import BootstrapTable, {expandRow} from 'react-bootstrap-table-next'
+
 
 
 function StateData() {
@@ -38,7 +38,7 @@ function StateData() {
             return (
                 <div key={i}>
                     <table>
-                        <thead> spending prime award</thead>
+                        <header> spending prime award</header>
                         <tbody>
                             <tr>
                                 <th scope="col">{state.grant.recipientName}</th>
@@ -90,15 +90,6 @@ function StateData() {
                 <header>ADVANCE STATE DATA SEARCH</header>
             </div>
             <div className="state-data">
-                < BootstrapTable
-                    keyField="id"
-                    data={stateMap}
-                    columns={columns}
-                    expandRow={expandRow}
-                    striped
-                    hover
-                    condensed
-                />
                 {stateMap}
             </div>
         </div>
