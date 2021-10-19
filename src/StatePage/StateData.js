@@ -88,15 +88,7 @@ function StateData() {
                 <header>ADVANCE STATE DATA SEARCH</header>
             </div>
             <div className="state-data">
-                {/* < BootstrapTable
-                    keyField="id"
-                    data={stateMap}
-                    columns={columns}
-                    expandRow={expandRow}
-                    striped
-                    hover
-                    condensed
-                /> */}
+
                 {stateMap}
             </div>
         </div>
