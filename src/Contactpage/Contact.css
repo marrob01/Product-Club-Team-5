@@ -1,9 +1,17 @@
+.contact-page {
+    border: 2px solid rgb(226, 219, 219);
+    box-shadow: 5px 3px 5px 3px lightgrey;
+    margin: 10%;
+    width: 80%;
+}
+
 .contact-header {
+    margin-top: 20px;
     text-align: center;
     text-decoration: underline;
-     line-height: 2em;
-     text-underline-position: under;
-    color: blue;
+    line-height: 2em;
+    text-underline-position: under;
+    color: #407BFF;
 }
 
 .contact-message {
@@ -17,6 +25,10 @@
 
 }
 
+#button {
+    background-color: #407BFF;
+}
+
 .form {
     margin-top: 20%;
     margin-left: 5%;
@@ -26,9 +38,7 @@
     grid-column-end: 3;
 }
 
-.gap-2 {
-
-}
+.gap-2 {}
 
 .icon-info-map {
     margin-top: 30%;
