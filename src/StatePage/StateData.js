@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import BootstrapTable from 'react-bootstrap-table-next'
+import BootstrapTable, {expandRow} from 'react-bootstrap-table-next'
 
 
 function StateData() {
@@ -31,14 +31,13 @@ function StateData() {
         getStateData()
     }, [])
 
-    
-    
+
+
     const stateMap =
-    stateData.map((state, i) => {
-        return (
-            <div key={i}>
+        stateData.map((state, i) => {
+            return (
+                <div key={i}>
                     <table>
-                        {/* <caption>ADVANCE STATE DATA SEARCH</caption> */}
                         <thead> spending prime award</thead>
                         <tbody>
                             <tr>
@@ -55,9 +54,10 @@ function StateData() {
                         </tbody>
                     </table>
                     <table>
+                        <tbody>
                         <tr>
                             <th scope="col">{state.directPayment.recipientName}</th>
-                            <td className="awardId">{state.directPayment.awardID} </td>
+                                <td scope="col" className="awardId">{state.directPayment.awardID} </td>
                             <td className="startDate">{state.directPayment.startDate}</td>
                             <td className="endDate"> {state.directPayment.endDate}</td>
                             <td className="state">{state.directPayment.State}</td>
@@ -67,31 +67,22 @@ function StateData() {
                             <td className="awardAmount">{state.directPayment.awardAmount}</td>
                             <td className="awardType"> {state.directPayment.awardType}</td>
                         </tr>
+                        </tbody>
                     </table>
                 </div>
             )
         }
         )
-        
-        const columns = [{
-            dataField: 'id',
-            text: 'Product ID'
-        }, {
-            dataField: 'name',
-            text: 'Product Name'
-        }, {
-            dataField: 'price',
-            text: 'Product Price'
-        }];
-    
-        < BootstrapTable
-            keyField="id"
-            data={stateMap}
-            columns={columns}
-            striped
-            hover
-            condensed
-        />
+
+    const columns = [{
+        dataField: 'select',
+        text: 'Select'
+    },
+    {
+        dataField: 'name',
+        text: 'Product Name'
+    }];
+
 
     return (
         <div>
@@ -99,6 +90,15 @@ function StateData() {
                 <header>ADVANCE STATE DATA SEARCH</header>
             </div>
             <div className="state-data">
+                < BootstrapTable
+                    keyField="id"
+                    data={stateMap}
+                    columns={columns}
+                    expandRow={expandRow}
+                    striped
+                    hover
+                    condensed
+                />
                 {stateMap}
             </div>
         </div>

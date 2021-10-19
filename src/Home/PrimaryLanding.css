@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+}
+
+#primary-button {
+    border: 2px solid rgb(0, 71, 177);
+    border-radius: 1px;
+    outline: none;
+    background-color: transparent;
+    height: 5vh;
+    width: 8vw;
+    padding: 0;
+}
+
+#image {
+    height: 600px;
+    width: 700px;
+}
+
+.content {
+    padding-top: 40px;
+}
