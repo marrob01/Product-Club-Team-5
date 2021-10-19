@@ -1,4 +1,5 @@
 import './StateLanding.css';
+import { Link } from 'react-router-dom';
 
 function StateLanding({
         headerThree, 
@@ -27,7 +28,12 @@ function StateLanding({
 
                 <p className="state-content" id="state-paragraph"> {paragraph}</p>
 
-                <button className="state-content" id="state-button">{button}</button>
+                <button 
+                className="state-content" 
+                id="state-button" 
+                >
+                    { button }
+                </button>
             </div>
         </div>
     )
