@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.state-header{
+    background-color: #0A3B5B;
+    font-weight: normal;
+    font-family: Helvetica,
+    sans-serif;
+    color: white;
+}
+
+.state-container {
+    margin: 0;
+    padding: 0;
+}
+
+.state-data-container {
+    display: grid;
+    grid-template-columns: 20% 70%;
+}
+
+
+.recipient-container {
+    background-color: whitesmoke;
+    padding-bottom: 5%;
+    width: 80vw;
+    transition: all .3s ease;
+}
+
+
+#header {
+    display: flex;
+    gap: 10px;
+
+}
+
+.name {
+    margin-left: 10.2%;
+}
+
+.spa {
+    display: flex;
+    margin-left: 45%;
+}
+
+.rname {
+    margin-left: 13.5%;
+}
+
+ul{
+margin-left: 16%;
+}
+#recipient-name-section {
+    display: flex;
+    gap: 10px;
+}
+
+#data-table-container {
+    margin: auto;
+}

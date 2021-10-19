@@ -1,11 +1,13 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { IoIosArrowForward, IoIosArrowDown } from 'react-icons/io'
 
 
 
 function StateData() {
 
     const [stateData, setStateData] = useState([])
+    const [expandNameContainer, setExpandNameContainer] = useState([]);
 
     const getStateData = async () => {
         await fetch('http://localhost:9000/state'
@@ -31,67 +33,95 @@ function StateData() {
         getStateData()
     }, [])
 
+    const clickRightArrow = <IoIosArrowForward
+        className="right-arrow" size="30px" color="#3C64B1"
+        onClick={() => setExpandNameContainer(!expandNameContainer)}
+    />
 
+    const clickDownArrow = <IoIosArrowDown
+        className="down-arrown" size="30px" color="#3C64B1"
+        onClick={() => setExpandNameContainer(!expandNameContainer)}
+    />
+
+    const closeNameContainer = () => setExpandNameContainer(false);
 
     const stateMap =
         stateData.map((state, i) => {
             return (
-                <div key={i}>
-                    <table>
-                        <header> spending prime award</header>
-                        <tbody>
-                            <tr>
-                                <th scope="col">{state.grant.recipientName}</th>
-                                <td className="awardId">{state.grant.awardID} </td>
-                                <td className="startDate">{state.grant.startDate}</td>
-                                <td className="endDate"> {state.grant.endDate}</td>
-                                <td className="county">{state.grant.County}</td>
-                                <td className="city">{state.grant.City}</td>
-                                <td className="covidObligations">{state.grant.covidObligations}</td>
-                                <td className="awardAmount">{state.grant.awardAmount}</td>
-                                <td className="awardType"> {state.grant.awardType}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table>
-                        <tbody>
-                        <tr>
-                            <th scope="col">{state.directPayment.recipientName}</th>
-                                <td scope="col" className="awardId">{state.directPayment.awardID} </td>
-                            <td className="startDate">{state.directPayment.startDate}</td>
-                            <td className="endDate"> {state.directPayment.endDate}</td>
-                            <td className="state">{state.directPayment.State}</td>
-                            <td className="county">{state.directPayment.County}</td>
-                            <td className="city">{state.directPayment.City}</td>
-                            <td className="covidObligations">{state.directPayment.covidObligations}</td>
-                            <td className="awardAmount">{state.directPayment.awardAmount}</td>
-                            <td className="awardType"> {state.directPayment.awardType}</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <div>
+                    <div key={i} className="recipient-container">
+
+                        <div id="recipient-name-section">
+                            {expandNameContainer ? clickDownArrow : clickRightArrow}
+
+                            <h2 className="rname">{state.grant.recipientName}</h2>
+                        </div>
+                        <div>
+                            {expandNameContainer ? clickDownArrow : clickRightArrow}
+                            {expandNameContainer ? (
+                        <ul>
+                            <li className="recipientName">{state.grant.recipientName}</li>
+                            <li className="awardId">{state.grant.awardID} </li>
+                            <li className="starliate">{state.grant.starliate}</li>
+                            <li className="endDate"> {state.grant.endDate}</li>
+                            <li className="county">{state.grant.County}</li>
+                            <li className="city">{state.grant.City}</li>
+                            <li className="covidObligations">{state.grant.covidObligations}</li>
+                            <li className="awardAmount">{state.grant.awardAmount}</li>
+                            <li className="awardType"> {state.grant.awardType}</li>
+                        </ul>
+                            ) : (
+                                ""
+                            )}
+                        </div>
+                        <div>
+                            {expandNameContainer ? clickDownArrow : clickRightArrow}
+                            {expandNameContainer ? (
+                        <ul>
+                            <li>{state.directPayment.recipientName}</li>
+                            <li className="awardId">{state.directPayment.awardID} </li>
+                            <li className="starliate">{state.directPayment.starliate}</li>
+                            <li className="endDate"> {state.directPayment.endDate}</li>
+                            <li className="state">{state.directPayment.State}</li>
+                            <li className="county">{state.directPayment.County}</li>
+                            <li className="city">{state.directPayment.City}</li>
+                            <li className="covidObligations">{state.directPayment.covidObligations}</li>
+                            <li className="awardAmount">{state.directPayment.awardAmount}</li>
+                            <li className="awardType"> {state.directPayment.awardType}</li>
+                        </ul>
+                        ) : (
+                        ""
+                            )}
+                    </div>
+                    </div>
                 </div>
             )
         }
         )
 
-    const columns = [{
-        dataField: 'select',
-        text: 'Select'
-    },
-    {
-        dataField: 'name',
-        text: 'Product Name'
-    }];
+    
+    
 
 
     return (
-        <div>
-            <div className="state-header">
-                <header>ADVANCE STATE DATA SEARCH</header>
+        <div className="state-container">
+            <div className="state-header-container">
+                <h1 className="state-header">ADVANCE STATE DATA SEARCH</h1>
             </div>
-            <div className="state-data">
-                {stateMap}
+            <div className="state-data-container">
+                <div></div>
+                <div className="data-table-container">
+                    <div id="header">
+                        <h3>Select</h3>
+                        <h3 className="name">Name</h3>
+                        <h5 className="spa"> spending prime award</h5>
+                    </div>
+                    <div className="state-data">
+                        {stateMap}
+                    </div>
+                </div>
             </div>
+
         </div>
     )
 }

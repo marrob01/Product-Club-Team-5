@@ -9,7 +9,7 @@ import Test from './Test.js'
 import { BrowserRouter,  Router, Switch, Route } from "react-router-dom";
 import { useState, useEffect, useHistory } from 'react';
 import LandingPage from './Home/LandingPage';
-
+import './StatePage/StateData.css'
 import Contact from './Contactpage/Contact';
 import StateData from './StatePage/StateData';
 import FederalData from './FederalPage/FederalData';
