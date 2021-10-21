@@ -60,18 +60,18 @@ const stateData = [
 ]
 
 const filterParams = {
-    // award_id_uri: "R21AI152513-1959686684",
-    // assistance_type_code: "Project Grant",
-    // period_of_performance_start_date: "2020-03-02",
-    // period_of_performance_current_end_date: "2022-02-28",
-    // recipient_name: "VIRGINIA COMMONWEALTH UNIVERSITY",
+    award_id_uri: "R21AI152513-1959686684",
+    assistance_type_code: "Project Grant",
+    period_of_performance_start_date: "2020-03-02",
+    period_of_performance_current_end_date: "2022-02-28",
+    recipient_name: "VIRGINIA COMMONWEALTH UNIVERSITY",
     recipient_state_name: "VIRGINIA",
-    // recipient_country_name: "UNITED STATES",
-    // recipient_city_name: "RICHMOND",
-    // federal_action_obligation: "186328.0",
-    // total_obligated_amount: "411468.0",
-    // cfda_title: "ALLERGY AND INFECTIOUS DISEASES RESEARCH",
-    // business_types_code: "H"
+    recipient_country_name: "UNITED STATES",
+    recipient_city_name: "RICHMOND",
+    federal_action_obligation: "186328.0",
+    total_obligated_amount: "411468.0",
+    cfda_title: "ALLERGY AND INFECTIOUS DISEASES RESEARCH",
+    business_types_code: "H"
 }
 
 const Filter = () => {
@@ -115,7 +115,7 @@ const Filter = () => {
 
     return (
         <div>
-            hi
+            
         </div>
     )
 }
