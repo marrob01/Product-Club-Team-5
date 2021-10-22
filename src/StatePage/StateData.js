@@ -74,7 +74,7 @@ function StateData() {
                                 ""
                             )}
                         </div>
-                        <div>
+                        {/* <div>
                             {expandNameContainer ? clickDownArrow : clickRightArrow}
                             {expandNameContainer ? (
                         <ul>
@@ -92,7 +92,7 @@ function StateData() {
                         ) : (
                         ""
                             )}
-                    </div>
+                    </div> */}
                     </div>
                 </div>
             )
