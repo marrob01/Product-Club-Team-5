@@ -7,7 +7,7 @@ import stateImage from "../images/analysis.png";
 import "./LandingPage.css";
 import { Link } from "react-router-dom";
 
-function Landingpage() {
+function LandingPage() {
   return (
     <div className="home-container">
       <div className="first-section-container">
@@ -35,4 +35,4 @@ function Landingpage() {
   );
 }
 
-export default Landingpage;
+export default LandingPage;
