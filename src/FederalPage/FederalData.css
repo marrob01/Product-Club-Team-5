@@ -54,6 +54,10 @@
   gap: 10px;
 }
 
+#federal-recipient-name-header {
+    margin-right: 10.2%;
+}
+
 #data-table-container {
   margin: auto;
 }

@@ -61,6 +61,7 @@ function FederalData() {
             <div>
               {expandNameContainer ? clickDownArrow : clickRightArrow}
               {expandNameContainer ? (
+                    
                 <ul>
                   <li>{federal.grant.recipientName}</li>
                   <li>{federal.grant.awardAmount}</li>
@@ -73,14 +74,12 @@ function FederalData() {
                 </ul>
               ) : (
                 ""
-              )}
+              )} 
             </div>
             <div>
-              { show ?
-                <h2 id="federal-recipient-name-header">
-              {federal.grant.recipientName}
-            </h2> : ''
-            }           
+            <h2 id="federal-recipient-name-header">
+                      {federal.grant.recipientName}
+                   </h2>   
             </div>
           </div>
         </div>
@@ -95,7 +94,9 @@ function FederalData() {
       </div>
 
       <div className="federal-data-container">
-        <div></div>
+        <div>
+
+        </div>
 
         <div id="data-table-container">
           <div id="header">
