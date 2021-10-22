@@ -1,64 +1,59 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .federal-container {
-    height: 100vh;
-    margin: 0;
-    padding: 0;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .federal-data-container {
-    display: grid;
-    grid-template-columns: 20% 70%;
+  display: grid;
+  grid-template-columns: 20% 70%;
 }
 
 #federal-header-container {
-    background-color: #0A3B5B;
-    color: white;
-    padding: 10px;
+  background-color: #0a3b5b;
+  color: white;
+  padding: 10px;
 }
 
 #federal-header {
-    font-weight: normal;
-    font-family: Helvetica, sans-serif;
+  font-weight: normal;
+  font-family: Helvetica, sans-serif;
 }
 
-
 .recipient-container {
-    height: 50vh;
-    width: 80vw;
-    padding: 0;
-    overflow: hidden;
-    transition: all .3s ease;
+  height: 50vh;
+  width: 80vw;
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 #individual-recipient-container {
-    background-color: whitesmoke;
-    border-top: 1px solid rgb(179, 179, 179);
-    border-bottom: 1px solid rgb(179, 179, 179);
-
+  background-color: whitesmoke;
+  border-top: 1px solid rgb(179, 179, 179);
+  border-bottom: 1px solid rgb(179, 179, 179);
 }
-
 
 /* .recipient-container {
     max-height: 250px;
     max-width: 50vw;
   } */
 
-
 #header {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
-
 #recipient-name-section {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 #data-table-container {
-    margin: auto;
+  margin: auto;
 }
