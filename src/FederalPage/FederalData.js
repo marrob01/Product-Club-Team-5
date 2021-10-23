@@ -8,8 +8,8 @@ function FederalData() {
   const [expandNameContainer, setExpandNameContainer] = useState([]);
   const [show, setShow] = useState(true);
 
-  const getFederalData = () => {
-    fetch(
+  const getFederalData = async () => {
+  await fetch(
       "http://localhost:9000/federal",
 
       {
@@ -63,23 +63,23 @@ function FederalData() {
               {expandNameContainer ? (
                     
                 <ul>
-                  <li>{federal.grant.recipientName}</li>
-                  <li>{federal.grant.awardAmount}</li>
-                  <li>{federal.grant.awardType}</li>
-                  <li>{federal.grant.startDate}</li>
-                  <li>{federal.grant.endDate}</li>
-                  <li>{federal.grant.County}</li>
-                  <li>{federal.grant.City}</li>
-                  <li>{federal.grant.CovidObligations}</li>
+                  <li>{federal.Recepient_Name}</li>
+                  <li>{federal.cfda_title}</li>
+                  <li>{federal.award_description}</li>
+                  <li>{federal.Total_Award_Amount}</li>
+                  <li>{federal.City}</li>
+                  <li>{federal.Start_Date}</li>
+                  <li>{federal.End_Date}</li>
+                  <li>{federal.Covid_Obligations}</li>
                 </ul>
               ) : (
                 ""
               )} 
             </div>
             <div>
-            <h2 id="federal-recipient-name-header">
-                      {federal.grant.recipientName}
-                   </h2>   
+            <h5 id="federal-recipient-name-header">
+                      {federal.Recepient_Name}
+                   </h5>   
             </div>
           </div>
         </div>
