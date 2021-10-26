@@ -1,4 +1,5 @@
 import React from 'react';
+import './StateData.css'
 import { useState, useEffect } from 'react';
 import { IoIosArrowForward, IoIosArrowDown } from 'react-icons/io'
 
@@ -7,7 +8,7 @@ import { IoIosArrowForward, IoIosArrowDown } from 'react-icons/io'
 function StateData() {
 
     const [stateData, setStateData] = useState([])
-    const [expandNameContainer, setExpandNameContainer] = useState([]);
+    const [expandNameContainer, setExpandNameContainer] = useState(false);
 
     const getStateData = async () => {
         await fetch('http://localhost:9000/state'
@@ -43,64 +44,45 @@ function StateData() {
         onClick={() => setExpandNameContainer(!expandNameContainer)}
     />
 
-    const closeNameContainer = () => setExpandNameContainer(false);
+    // const closeNameContainer = () => setExpandNameContainer(false);
 
     const stateMap =
         stateData.map((state, i) => {
             return (
-                <div>
-                    <div key={i} className="recipient-container">
-
-                        <div id="recipient-name-section">
-                            {expandNameContainer ? clickDownArrow : clickRightArrow}
-
-                            <h2 className="rname">{state.grant.recipientName}</h2>
+                <div key={i} className="state-recipient-container">
+                    <div id="state-recipient-name-section">
+                        <div id="state-individual-recipient-container">
+                            <div id="state-recipient-container-body">
+                                {expandNameContainer ? clickDownArrow : clickRightArrow }
+                                {expandNameContainer ? 
+                                    
+                                    <ul>
+                                        <h5 id="rname">{state.Grantee_Name}</h5>
+                                        <li className="recipientName">{state.Grantee_Name}</li>
+                                        <li className="recipientName">{state.Grant_Number}</li>
+                                        <li className="cfda">{state.Program_Name}</li>
+                                        <li className="awardId">{state.City} </li>
+                                        <li className="starliate">{state.State}</li>
+                                        <li className="county">{state.County}</li>
+                                        <li className="awardAmount">{state.Award_Fiscal_Year}</li>
+                                        <li className="awardType"> {state.Award_Funding}</li>
+                                    </ul>
+                                    : 
+                                clickRightArrow
+                                ?
+                                <div><h5 id="rname" style={{marginLeft:"12%"}}>{state.Grantee_Name}</h5></div>
+                                  :  null
+                                }
+                            </div>
                         </div>
-                        <div>
-                            {expandNameContainer ? clickDownArrow : clickRightArrow}
-                            {expandNameContainer ? (
-                        <ul>
-                            <li className="recipientName">{state.grant.recipientName}</li>
-                            <li className="awardId">{state.grant.awardID} </li>
-                            <li className="starliate">{state.grant.starliate}</li>
-                            <li className="endDate"> {state.grant.endDate}</li>
-                            <li className="county">{state.grant.County}</li>
-                            <li className="city">{state.grant.City}</li>
-                            <li className="covidObligations">{state.grant.covidObligations}</li>
-                            <li className="awardAmount">{state.grant.awardAmount}</li>
-                            <li className="awardType"> {state.grant.awardType}</li>
-                        </ul>
-                            ) : (
-                                ""
-                            )}
-                        </div>
-                        {/* <div>
-                            {expandNameContainer ? clickDownArrow : clickRightArrow}
-                            {expandNameContainer ? (
-                        <ul>
-                            <li>{state.directPayment.recipientName}</li>
-                            <li className="awardId">{state.directPayment.awardID} </li>
-                            <li className="starliate">{state.directPayment.starliate}</li>
-                            <li className="endDate"> {state.directPayment.endDate}</li>
-                            <li className="state">{state.directPayment.State}</li>
-                            <li className="county">{state.directPayment.County}</li>
-                            <li className="city">{state.directPayment.City}</li>
-                            <li className="covidObligations">{state.directPayment.covidObligations}</li>
-                            <li className="awardAmount">{state.directPayment.awardAmount}</li>
-                            <li className="awardType"> {state.directPayment.awardType}</li>
-                        </ul>
-                        ) : (
-                        ""
-                            )}
-                    </div> */}
                     </div>
                 </div>
             )
         }
         )
 
-    
-    
+
+
 
 
     return (
@@ -108,13 +90,14 @@ function StateData() {
             <div className="state-header-container">
                 <h1 className="state-header">ADVANCE STATE DATA SEARCH</h1>
             </div>
+            <div className="spa">
+                <h5> spending prime award</h5>
+            </div>
             <div className="state-data-container">
-                <div></div>
-                <div className="data-table-container">
-                    <div id="header">
+                <div className="state-data-table-container">
+                    <div id="state-header">
                         <h3>Select</h3>
                         <h3 className="name">Name</h3>
-                        <h5 className="spa"> spending prime award</h5>
                     </div>
                     <div className="state-data">
                         {stateMap}
