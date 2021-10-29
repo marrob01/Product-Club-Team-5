@@ -14,6 +14,7 @@ import Contact from './Contactpage/Contact';
 import StateData from './StatePage/StateData';
 import FederalData from './FederalPage/FederalData';
 import About from './About/About';
+import FederalRow from './FederalPage/FederalRow';
 
 
 
@@ -55,9 +56,10 @@ function App(props) {
           <Switch>
             <Route exact path='/' component={LandingPage}/>
             <Route exact path="/about" component={About} />
-          <Route exact path="/state" component={StateData}/>
+            <Route exact path="/state" component={StateData}/>
             <Route exact path="/federal" component={FederalData} />
             <Route exact path="/contact" component={Contact} />
+            <Route path="/federalRow" component={FederalRow} />
           </Switch>
 
           <Footer />
