@@ -5,7 +5,8 @@ function StateFilterUI({ filter }) {
 
     const [isClicked, setIsClicked] = useState(false)
     const [isActive, setIsActive] = useState(false)
-    
+    const [value, setValue] = useState("")
+
 
 
 
@@ -23,12 +24,11 @@ function StateFilterUI({ filter }) {
 
     }
 
-    // const arrow = () => {
-    //     if(<label></label>){
-    //         return clickRightArrow
-    //     }
-    // }
-    
+    const handleOnSubmit = (e) => {
+        const value = e.target.value
+        setValue(value)
+    }
+
 
     return (
         <div className="filter-container">
@@ -41,77 +41,78 @@ function StateFilterUI({ filter }) {
                 </div>
                 {!isActive ?
                     <div>
-                            <label className="filter">
-                                {clickRightArrow}
-                                Grant Name
-                            </label>
+                        <label className="filter">
+                            {clickRightArrow}
+                            Grant Name
+                        </label>
 
-                            <label className="filter">
+                        <label className="filter">
                             {clickRightArrow}
-                                Grant Number
-                            </label>
-                            <label className="filter">
+                            Grant Number
+                        </label>
+                        <label className="filter">
                             {clickRightArrow}
-                                Program Name
-                            </label>
-                            <label className="filter">
+                            Program Name
+                        </label>
+                        <label className="filter">
                             {clickRightArrow}
-                                City
-                            </label>
-                            <label className="filter">
+                            City
+                        </label>
+                        <label className="filter">
                             {clickRightArrow}
-                                State
-                            </label>
-                            <label className="filter">
+                            State
+                        </label>
+                        <label className="filter">
                             {clickRightArrow}
-                                County
-                            </label>
-                            <label className="filter">
+                            County
+                        </label>
+                        <label className="filter">
                             {clickRightArrow}
-                                Award Fiscal Year
-                            </label>
-                            <label className="filter">
+                            Award Fiscal Year
+                        </label>
+                        <label className="filter">
                             {clickRightArrow}
-                                Award Funding
-                            </label>
+                            Award Funding
+                        </label>
                     </div>
                     :
                     <div>
                         <label className="filter">
                             Grant Name
-                            <input name="grantee_name" type="text" onChange={clicked} />
+                            <input name="grantee_name" type="text" onChange={clicked} onSubmit={handleOnSubmit} />
                         </label>
 
                         <label className="filter">
-                        Grant Number
-                            <input name="grant_number" type="text" onChange={clicked} />
-                    </label>
-                    <label className="filter">
-                        Program Name
-                            <input name="program_name" type="text" onChange={clicked} />
-                    </label>
-                    <label className="filter">
-                        City
-                            <input name="city" type="text" onChange={clicked} />
-                    </label>
-                    <label className="filter">
-                        State
-                            <input name="state" type="text" onChange={clicked} />
-                    </label>
-                    <label className="filter">
-                        County
-                            <input name="county" type="text" onChange={clicked} />
-                    </label>
-                    <label className="filter">
-                        Award Fiscal Year
-                            <input name="award_fiscal_year" type="text" onChange={clicked} />
-                    </label>
-                    <label className="filter">
-                        Award Funding
-                            <input name="award_funding" type="text" onChange={clicked} />
-                    </label> 
+                            Grant Number
+                            <input name="grant_number" type="text" onChange={clicked} onSubmit={handleOnSubmit} />
+                        </label>
+                        <label className="filter">
+                            Program Name
+                            <input name="program_name" type="text" onChange={clicked} onSubmit={handleOnSubmit} />
+                        </label>
+                        <label className="filter">
+                            City
+                            <input name="city" type="text" onChange={clicked} onSubmit={handleOnSubmit} />
+                        </label>
+                        <label className="filter">
+                            State
+                            <input name="state" type="text" onChange={clicked} onSubmit={handleOnSubmit} />
+                        </label>
+                        <label className="filter">
+                            County
+                            <input name="county" type="text" onChange={clicked} onSubmit={handleOnSubmit} />
+                        </label>
+                        <label className="filter">
+                            Award Fiscal Year
+                            <input name="award_fiscal_year" type="text" onChange={clicked} onSubmit={handleOnSubmit} />
+                        </label>
+                        <label className="filter">
+                            Award Funding
+                            <input name="award_funding" type="text" onChange={clicked} onSubmit={handleOnSubmit} />
+                        </label>
                     </div>
                 }
+                <button className="filter-submit-btn" ></button>
             </div>
         </div>
     )
