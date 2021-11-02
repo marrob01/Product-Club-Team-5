@@ -55,48 +55,6 @@ function FederalData() {
   const closeNameContainer = () => setExpandNameContainer(false);
 
 
- 
-
-  // const federalMap = () => {
-  //   return (
-      
-      // <div key={i} className="recipient-container">
-      //   <div id="individual-recipient-container">
-      //     <div id="recipient-name-section">
-      //       <div>
-      //         {expandNameContainer ? clickDownArrow : clickRightArrow}
-      //         {expandNameContainer ? (
-      //           <ul>
-      //             <h5 id="federal-recipient-name-header">
-      //               {federal.Recepient_Name}  
-      //             </h5>
-      //             <li>{federal.cfda_title}</li>
-      //             <li>{federal.award_description}</li>
-      //             <li>{federal.Total_Award_Amount}</li>
-      //             <li>{federal.City}</li>
-      //             <li>{federal.Start_Date}</li>
-      //             <li>{federal.End_Date}</li>
-      //             <li>{federal.Covid_Obligations}</li>
-      //           </ul>
-      //         ) : (
-      //           null
-      //         )}
-
-      //       </div>
-            
-      //       {expandNameContainer ? null : (
-      //         <div>
-      //           <h5 id="federal-recipient-name-header">
-      //             {federal.Recepient_Name}
-      //           </h5>
-      //         </div>
-      //       )}
-      //     </div>
-      //   </div>
-      // </div>
-      
-  // )};
-  // });
 
   return (
     <div className="federal-container">
@@ -116,11 +74,11 @@ function FederalData() {
             <h3 className="table-header">Name</h3>
           </div>
           {<div>
-      {federalData.map((content, i) => {
+      {federalData.map((federalContent, i) => {
          return (
            <div key={i}> 
          <FederalRow
-          content={content}
+          federalContent={federalContent}
           />
           </div>
          )
