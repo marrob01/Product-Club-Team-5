@@ -1,15 +1,16 @@
-import React, { useMemo, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
 import "./FederalData.css";
 import { Link } from "react-router-dom";
+import FederalRow from "./FederalRow";
 
 function FederalData() {
   const [federalData, setFederalData] = useState([]);
   const [expandNameContainer, setExpandNameContainer] = useState([]);
   const [show, setShow] = useState(true);
 
-  const getFederalData = () => {
-    fetch(
+  const getFederalData = async () => {
+    await fetch(
       "http://localhost:9000/federal",
 
       {
@@ -37,7 +38,7 @@ function FederalData() {
     <IoIosArrowForward
       className="right-arrow"
       size="30px"
-      color="#3C64B1"
+      color="gray"
       onClick={() => setExpandNameContainer(!expandNameContainer)}
     />
   );
@@ -46,46 +47,14 @@ function FederalData() {
     <IoIosArrowDown
       className="down-arrown"
       size="30px"
-      color="#3C64B1"
+      color="gray"
       onClick={() => setExpandNameContainer(!expandNameContainer)}
     />
   );
 
   const closeNameContainer = () => setExpandNameContainer(false);
 
-  const federalMap = federalData.map((federal, i) => {
-    return (
-      <div key={i} className="recipient-container">
-        <div id="individual-recipient-container">
-          <div id="recipient-name-section">
-            <div>
-              {expandNameContainer ? clickDownArrow : clickRightArrow}
-              {expandNameContainer ? (
-                    
-                <ul>
-                  <li>{federal.grant.recipientName}</li>
-                  <li>{federal.grant.awardAmount}</li>
-                  <li>{federal.grant.awardType}</li>
-                  <li>{federal.grant.startDate}</li>
-                  <li>{federal.grant.endDate}</li>
-                  <li>{federal.grant.County}</li>
-                  <li>{federal.grant.City}</li>
-                  <li>{federal.grant.CovidObligations}</li>
-                </ul>
-              ) : (
-                ""
-              )} 
-            </div>
-            <div>
-            <h2 id="federal-recipient-name-header">
-                      {federal.grant.recipientName}
-                   </h2>   
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  });
+
 
   return (
     <div className="federal-container">
@@ -94,16 +63,28 @@ function FederalData() {
       </div>
 
       <div className="federal-data-container">
-        <div>
-
-        </div>
+        <div className="federal-filter-container"></div>
 
         <div id="data-table-container">
-          <div id="header">
-            <h3>Select</h3>
-            <h3>Name</h3>
+          <div>
+            <h3 className="spending-name-prime-award">SPENDING BY PRIME AWARD</h3>
           </div>
-          {federalMap}
+          <div id="header">
+            <h3 className="table-header">Select</h3>
+            <h3 className="table-header">Name</h3>
+          </div>
+          {<div>
+      {federalData.map((federalContent, i) => {
+         return (
+           <div key={i}> 
+         <FederalRow
+          federalContent={federalContent}
+          />
+          </div>
+         )
+          
+      })}
+      </div>}
         </div>
       </div>
     </div>

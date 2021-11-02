@@ -55,7 +55,7 @@ function App(props) {
           <Switch>
             <Route exact path='/' component={LandingPage}/>
             <Route exact path="/about" component={About} />
-          <Route exact path="/state" component={StateData}/>
+            <Route exact path="/state" component={StateData}/>
             <Route exact path="/federal" component={FederalData} />
             <Route exact path="/contact" component={Contact} />
           </Switch>
