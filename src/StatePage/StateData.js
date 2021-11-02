@@ -5,8 +5,9 @@ import StateRow from './StateRow';
 import StateFilterUI from './StateFilterUI';
 
 
-
 function StateData() {
+  const [stateData, setStateData] = useState([]);
+  const [expandNameContainer, setExpandNameContainer] = useState(false);
 
     const [stateData, setStateData] = useState([])
 
@@ -37,6 +38,22 @@ function StateData() {
         getStateData()
     }, [])
 
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    )
+      .then(function (response) {
+        console.log(response);
+        return response.json();
+      })
+      .then(function (myJson) {
+        console.log(myJson);
+        setStateData(myJson);
+      });
+  };
 
     return (
         <div className="state-content-container">
@@ -69,9 +86,10 @@ function StateData() {
                     </div>
                 </div>
             </div>
-
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
-export default StateData
+export default StateData;
