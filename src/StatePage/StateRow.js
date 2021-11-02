@@ -15,7 +15,7 @@ const StateRow = ({ state }) => {
         onClick={() => setExpandNameContainer(!expandNameContainer)}
     />
 
-    console.log(state);
+    // console.log(state);
     return (
         <div className="accordion-item">
             <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
