@@ -5,7 +5,6 @@ import StateRow from './StateRow';
 import StateFilterUI from './StateFilterUI';
 
 
-
 function StateData() {
 
     const [stateData, setStateData] = useState([])
@@ -75,9 +74,8 @@ function StateData() {
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }
 
-export default StateData
+export default StateData;
