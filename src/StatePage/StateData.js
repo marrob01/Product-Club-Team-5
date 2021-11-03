@@ -10,8 +10,7 @@ function StateData() {
 
     const [stateData, setStateData] = useState([])
 
-
-    // console.log(filters, stateData);
+    const filters = ["Grantee Name", "Grant Number", "Program Name", "City", "County", "State", "Award Fiscal Year", "Award funding"]
 
     const getStateData = async () => {
         await fetch('http://localhost:9000/state'
@@ -43,13 +42,20 @@ function StateData() {
             <div className="state-header-container">
                 <h1 className="state-header">ADVANCE STATE DATA SEARCH</h1>
             </div>
-            <div className="state-filter-container">
-                <div className="filter-component">
-                    <div>
-                        <StateFilterUI />
+            <div className="state-data-container">
+                <div className="state-filter-container">
+                    <div className="filter-component">
+                        <div>
+                            {filters.map((filter) => {
+                                console.log(filter);
+                                return (
+                                    <div>
+                                        <StateFilterUI filter={filter} />
+                                    </div>
+                                )
+                            })}
+                        </div>
                     </div>
-                </div>
-                <div className="state-data-container">
                     <div className="state-data-table-container">
                         <div id="state-header">
                             <h3 className="select">Select</h3>

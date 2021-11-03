@@ -17,15 +17,15 @@ const StateRow = ({ state }) => {
 
     // console.log(state);
     return (
-        <div className="accordion-item">
-            <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
+        <div className="state-accordion-item">
+            <div className="state-accordion-title" onClick={() => setIsActive(!isActive)}>
                 <div>{!isActive ? clickRightArrow: clickDownArrow}</div>
                 <div>
                     <h5 id="rname">{state.Grantee_Name}</h5>
                 </div>
             </div>
             {isActive &&
-                <div className="accordion-content">
+                <div className="state-accordion-content">
                     {
                         < ul>
                             <li className="recipientNumber">Grantee Name: {state.Grant_Number}</li>

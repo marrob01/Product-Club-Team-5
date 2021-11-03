@@ -74,17 +74,17 @@ function FederalData() {
             <h3 className="table-header">Name</h3>
           </div>
           {<div>
-      {federalData.map((federalContent, i) => {
-         return (
-           <div key={i}> 
-         <FederalRow
-          federalContent={federalContent}
-          />
-          </div>
-         )
-          
-      })}
-      </div>}
+            {federalData.map((federalContent, i) => {
+              return (
+                <div key={i}>
+                  <FederalRow
+                    federalContent={federalContent}
+                  />
+                </div>
+              )
+
+            })}
+          </div>}
         </div>
       </div>
     </div>

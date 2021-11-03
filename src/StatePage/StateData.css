@@ -4,7 +4,7 @@
     list-style: none;
 }
 
-.accordion-item {
+.state-accordion-item {
     border-top: 1px solid rgb(179, 179, 179);
     border-bottom: 1px solid rgb(179, 179, 179);
     transition: all 0.3s ease;
@@ -13,14 +13,16 @@
     
 }
 
- .accordion-title {
+.state-accordion-title {
     display: flex;
     gap: 20px;
     padding: 10px;
 }
 
+
 #rname {
-    font-size: 20px;
+    font-size: 15px;
+    font-style: bold;
 }
 
 .down-arrow, .right-arrow{
@@ -30,7 +32,8 @@
 
 ul{
     margin-left: 3%;
-    overflow-y: scroll;
+    overflow: scroll;
+    font-size: 15px;
 }
 
 .state-content-container {
@@ -50,7 +53,7 @@ ul{
 .state-data-container {
     display: grid;
     grid-template-columns: 30% 70%;
-    width: 50%;
+    /* width: 50%; */
 }
 
 #head-description {
@@ -71,7 +74,7 @@ ul{
 }
 
 .name {
-    margin-left: 10.5%;
+    margin-left: 5%;
     font-size: 20px;
 }
 
@@ -86,7 +89,7 @@ ul{
 
 .filter-container {
     background-color: rgb(176, 222, 250);
-    /* width: 40%; */
+    width: 30vw;
     height: 100vh;
 }
 
@@ -97,7 +100,7 @@ ul{
 .filter-item {
     transition: all 0.3s ease-in-out;
     display: flex;
-    margin-left: 3%;
+    margin-left: 10%;
     /* gap: 5px; */
     
 }
@@ -106,7 +109,6 @@ ul{
     grid-template-columns: 1fr;
 }
 
-.filter {
-   
-    width: 10vw;
+.filter-component {
+   margin-left: 5%;
 }
