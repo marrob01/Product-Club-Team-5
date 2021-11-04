@@ -1,6 +1,7 @@
 import * as React from "react"
 import { TopNaVData } from "./TopNavData.js"
 import '../style/Nav.css'
+import navImage from '../images/usa-logo.png'
 
 
 
@@ -13,7 +14,7 @@ const Navigation = () => {
 
 
         <a href = "/" className="menu-bars">
-          <h1>Logo</h1>
+          <img className='nav-image' src={navImage} alt="USA Logo" />
         </a>
        
 

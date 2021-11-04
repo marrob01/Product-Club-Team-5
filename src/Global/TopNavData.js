@@ -4,28 +4,28 @@ import React from "react"
 
 
 export const TopNaVData = [
-  {
-    title: "Home",
-    path: "/",
-    cName: "nav-text",
-  },
+  // {
+  //   title: "Home",
+  //   path: "/",
+  //   cName: "nav-text",
+  // },
   {
     title: "About",
     path: "/about",
     cName: "nav-text",
   },
   {
-    title: "Federal",
+    title: "Federal Data",
     path: "/federal",
     cName: "nav-text",
   },
   {
-    title: "State",
+    title: "State Data",
     path: "/state",
     cName: "nav-text",
   },
   {
-    title: "Contact",
+    title: "Contact Us",
     path: "/contact",
     cName: "nav-text",
   },

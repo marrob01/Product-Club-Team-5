@@ -60,22 +60,22 @@ body{
 
       .ul-nav a {
           /* text-decoration: none; */
-          font-size: 22px;
+          font-size: 15px;
       }
 
 
 
-      .ul-nav  a:link {
-      color: blanchedalmond;
-    }
+      /* .ul-nav  a:link {
+      color: black;
+    } */
 
     .ul-nav  a:visited {
-      color: blanchedalmond;
+      color: black;
 
     }
 
     .ul-nav  a:hover {
-      color: rgb(231, 184, 112);
+      color: blue;
   }
 
     
@@ -85,4 +85,7 @@ body{
     }
 
 
-
+    .nav-image {
+      height: 70px;
+    }
+    
