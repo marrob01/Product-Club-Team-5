@@ -83,18 +83,32 @@ ul{
 }
 
 .state-filter-container {
+    background-color: rgb(176, 222, 250);
     display: flex;
-    width: 30%;
+    width: 30vw;
+}
+
+.filter{
+    padding-bottom: 15px;
 }
 
 .filter-container {
-    background-color: rgb(176, 222, 250);
+    display: flex;
     width: 30vw;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
-.filter-head{
-    margin-left: 3%;
+.filter-header{
+    padding-top: 15px;
+}
+
+h5{
+    margin-left: 10%;
+}
+hr{
+    margin-left: 0;
+    width: 25vw;
+    border: 1px solid black;
 }
 
 .filter-item {
@@ -105,10 +119,20 @@ ul{
     
 }
 
-.filter-title {
-    grid-template-columns: 1fr;
+.filter-component {
+    margin-left: 5%;
 }
 
-.filter-component {
-   margin-left: 5%;
+.filter-submit-btn{
+    margin-left: 5%;
+    padding: 5%;
+    font-size: 12px;
+}
+
+button{
+    padding: 5px;
+}
+
+.input{
+    font-size: 12px;
 }

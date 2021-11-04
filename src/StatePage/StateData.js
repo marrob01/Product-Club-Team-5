@@ -11,6 +11,7 @@ function StateData() {
 
     const filters = ["Grantee Name", "Grant Number", "Program Name", "City", "County", "State", "Award Fiscal Year", "Award funding"]
 
+    
     const getStateData = async () => {
         await fetch('http://localhost:9000/state'
 
@@ -35,6 +36,16 @@ function StateData() {
         getStateData()
     }, [])
 
+    const filterList = () => {
+        filters.map((filter) => {
+            <li>{filter}</li>
+        })
+        return (
+            <ul>
+                <li>{filterList}</li>
+            </ul>
+        )
+    }
 
     return (
         <div className="state-content-container">
@@ -44,15 +55,22 @@ function StateData() {
             <div className="state-data-container">
                 <div className="state-filter-container">
                     <div className="filter-component">
+                        <div className="filter-header">
+                            <h5 >FILTERS</h5>
+                                <hr />
+                        </div>
                         <div>
-                            {filters.map((filter) => {
-                                console.log(filter);
+                            {filters.map((filterList) => {
+                                console.log(filterList);
                                 return (
                                     <div>
-                                        <StateFilterUI filter={filter} />
+                                        <StateFilterUI filter={filterList} />
                                     </div>
                                 )
                             })}
+                        </div>
+                        <div className="filter-submit-btn">
+                            <button >Submit</button>
                         </div>
                     </div>
                     <div className="state-data-table-container">
