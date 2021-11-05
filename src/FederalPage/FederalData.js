@@ -3,13 +3,16 @@ import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
 import "./FederalData.css";
 import { Link } from "react-router-dom";
 import FederalRow from "./FederalRow";
+
 function FederalData() {
   const [federalData, setFederalData] = useState([]);
   const [expandNameContainer, setExpandNameContainer] = useState([]);
   const [show, setShow] = useState(true);
+
   const getFederalData = async () => {
     await fetch(
       "http://localhost:9000/federal",
+
       {
         headers: {
           "Content-Type": "application/json",
@@ -26,9 +29,11 @@ function FederalData() {
         setFederalData(myJson);
       });
   };
+
   useEffect(() => {
     getFederalData();
   }, []);
+
   const clickRightArrow = (
     <IoIosArrowForward
       className="right-arrow"
@@ -37,6 +42,7 @@ function FederalData() {
       onClick={() => setExpandNameContainer(!expandNameContainer)}
     />
   );
+
   const clickDownArrow = (
     <IoIosArrowDown
       className="down-arrown"
@@ -45,7 +51,11 @@ function FederalData() {
       onClick={() => setExpandNameContainer(!expandNameContainer)}
     />
   );
+
   const closeNameContainer = () => setExpandNameContainer(false);
+
+
+  
   return (
     <div className="federal-container">
       <div id="federal-header-container">

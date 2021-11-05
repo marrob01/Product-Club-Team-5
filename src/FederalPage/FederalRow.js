@@ -8,7 +8,7 @@ const FederalRow = ({ federalContent }) => {
   // const contentRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
   const [expandNameContainer, setExpandNameContainer] = useState([])
-
+ 
 
   const handleClick = () => {};
 
@@ -30,7 +30,7 @@ const clickDownArrow = <IoIosArrowDown
 
   return (
     // {console.log(content, 'getting the content')}
-
+    
     <div className="accordion">
       <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
                 <div>{!isActive ? clickRightArrow: clickDownArrow}</div>
