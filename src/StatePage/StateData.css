@@ -8,7 +8,6 @@
     border-top: 1px solid rgb(179, 179, 179);
     border-bottom: 1px solid rgb(179, 179, 179);
     transition: all 0.3s ease;
-    width: 90vw;
     overflow: hidden;
     
 }
@@ -21,7 +20,8 @@
 
 
 #rname {
-    font-size: 15px;
+    margin: 0;
+    padding: 0;
     font-style: bold;
 }
 
@@ -30,8 +30,8 @@
     
 }
 
-ul{
-    margin-left: 3%;
+.data-list {
+    margin-left: 5%;
     overflow: scroll;
     font-size: 15px;
 }
@@ -41,9 +41,15 @@ ul{
     padding: 0;
 }
 
-.state-header{
+.state-header-container{
     background-color: #0A3B5B;
-    font-size: 25px;
+    width: 100vw;
+    padding: 5px;
+}
+
+.state-page-header{
+    margin-left: 5%;
+    font-size: 30px;
     font-weight: normal;
     font-family: Helvetica,
     sans-serif;
@@ -52,23 +58,18 @@ ul{
 
 .state-data-container {
     display: grid;
-    grid-template-columns: 30% 70%;
-    /* width: 50%; */
+    grid-template-columns: 25% 75%;
 }
 
-#head-description {
+#header-description {
     display: flex;
-    margin-left: 75%;
+    margin-left: 65%;
     font-size: 15px;
-}
-
-#state-data-table-container {
-    margin: auto;
+    font-weight: bold;
 }
 
 #state-header {
     display: flex;
-    width: 90vw; 
     padding: 10px; 
     box-shadow: 3px 3px 3px 3px lightgrey;
 }
@@ -83,9 +84,9 @@ ul{
 }
 
 .state-filter-container {
-    background-color: rgb(176, 222, 250);
+    background-color: #E7F5FF;
     display: flex;
-    width: 30vw;
+    /* width: 30vw; */
 }
 
 .filter{
@@ -94,8 +95,6 @@ ul{
 
 .filter-container {
     display: flex;
-    width: 30vw;
-    /* height: 100vh; */
 }
 
 .filter-header{
@@ -103,7 +102,7 @@ ul{
 }
 
 h5{
-    margin-left: 10%;
+    margin-left: 15%;
 }
 hr{
     margin-left: 0;
@@ -115,12 +114,6 @@ hr{
     transition: all 0.3s ease-in-out;
     display: flex;
     margin-left: 10%;
-    /* gap: 5px; */
-    
-}
-
-.filter-component {
-    margin-left: 5%;
 }
 
 .filter-submit-btn{

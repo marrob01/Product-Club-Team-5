@@ -11,52 +11,42 @@
 
 .federal-data-container {
   display: grid;
-  grid-template-columns: 20% 70%;
+  grid-template-columns: 25% 75%;
 }
 
 #federal-header-container {
   background-color: #0a3b5b;
   color: white;
-  padding: 10px;
+  padding: 5px;
+  
 }
 
 #federal-header {
+  margin-left: 5%;
+  font-size: 30px;
   font-weight: normal;
   font-family: Helvetica, sans-serif;
   
 }
 
-.recipient-container {
-  width: 80vw;
-  padding: 20px;
+.accordion {
   overflow: hidden;
   transition: all 0.3s ease;
-  margin: 0;
   border-top: 1px solid rgb(179, 179, 179);
   border-bottom: 1px solid rgb(179, 179, 179);
 }
-
-/* #individual-recipient-container {
-  background-color: whitesmoke;
-  border-top: 1px solid rgb(179, 179, 179);
-  border-bottom: 1px solid rgb(179, 179, 179);
-} */
-
-/* .recipient-container {
-    max-height: 250px;
-    max-width: 50vw;
-  } */
 
 #header {
   display: flex;
   gap: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ box-shadow: 3px 3px 3px 3px lightgrey;
 }
 
 .spending-name-prime-award {
+    margin-left: 65%;
     text-align: center;
     font-weight: bold;
-    font-size: 3vh;
+    font-size: 15px;
     font-family: Helvetica, sans-serif;
 }
 
@@ -65,13 +55,14 @@
   gap: 20px;
 }
 
-
-#data-table-container {
-  margin: auto;
-}
+/* 
+.filter-component {
+  
+} */
 
 
 .federal-filter-container {
+    display: flex;
     background-color: #E7F5FF;
 }
 
@@ -85,4 +76,44 @@
 
 .table-header {
     font-size: 3vh;
+}
+
+.accordion-title {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+}
+
+.filter-header {
+  padding-top: 15px;
+}
+
+h5 {
+  margin-left: 15%;
+}
+
+hr {
+  margin-left: 0;
+  width: 25vw;
+  border: 1px solid black;
+}
+
+.filter-item {
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  margin-left: 10%;
+}
+
+.filter-submit-btn {
+  margin-left: 5%;
+  padding: 5%;
+  font-size: 12px;
+}
+
+button {
+  padding: 5px;
+}
+
+.input {
+  font-size: 12px;
 }

@@ -11,7 +11,7 @@ function StateData() {
 
     const filters = ["Grantee Name", "Grant Number", "Program Name", "City", "County", "State", "Award Fiscal Year", "Award funding"]
 
-    
+
     const getStateData = async () => {
         await fetch('http://localhost:9000/state'
 
@@ -50,14 +50,14 @@ function StateData() {
     return (
         <div className="state-content-container">
             <div className="state-header-container">
-                <h1 className="state-header">ADVANCE STATE DATA SEARCH</h1>
+                <h1 className="state-page-header">ADVANCE STATE DATA SEARCH</h1>
             </div>
             <div className="state-data-container">
                 <div className="state-filter-container">
                     <div className="filter-component">
                         <div className="filter-header">
                             <h5 >FILTERS</h5>
-                                <hr />
+                            <hr />
                         </div>
                         <div>
                             {filters.map((filterList) => {
@@ -73,22 +73,25 @@ function StateData() {
                             <button >Submit</button>
                         </div>
                     </div>
-                    <div className="state-data-table-container">
-                        <div id="state-header">
-                            <h3 className="select">Select</h3>
-                            <h3 className="name">Name</h3>
-                        </div>
-                        <div className="state-data">
-                            {stateData.map((state) => {
-                                // console.log(state);
-                                return (
-                                    <div>
-                                        <StateRow
-                                            state={state} />
-                                    </div>
-                                )
-                            })}
-                        </div>
+                </div>
+                <div className="state-data-table-container">
+                    <div>
+                        <h3 id="header-description">SPENDING BY PRIME AWARD</h3>
+                    </div>
+                    <div id="state-header">
+                        <h3 className="select">Select</h3>
+                        <h3 className="name">Name</h3>
+                    </div>
+                    <div className="state-data">
+                        {stateData.map((state) => {
+                            // console.log(state);
+                            return (
+                                <div>
+                                    <StateRow
+                                        state={state} />
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
             </div>

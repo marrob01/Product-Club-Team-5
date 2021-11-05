@@ -76,12 +76,7 @@ function FederalData() {
       </div>
 
       <div className="federal-data-container">
-        <div className="federal-filter-container"></div>
-
-        <div id="data-table-container">
-          <div>
-            <h3 className="spending-name-prime-award">SPENDING BY PRIME AWARD</h3>
-          </div>
+        <div className="federal-filter-container">
           <div className="filter-component">
             <div className="filter-header">
               <h5 >FILTERS</h5>
@@ -100,6 +95,13 @@ function FederalData() {
             <div className="filter-submit-btn">
               <button >Submit</button>
             </div>
+          </div>
+
+        </div>
+
+        <div id="data-table-container">
+          <div>
+            <h3 className="spending-name-prime-award">SPENDING BY PRIME AWARD</h3>
           </div>
           <div id="header">
             <h3 className="table-header">Select</h3>
