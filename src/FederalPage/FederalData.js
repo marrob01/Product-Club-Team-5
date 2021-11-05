@@ -55,7 +55,7 @@ function FederalData() {
   const closeNameContainer = () => setExpandNameContainer(false);
 
 
-  
+
   return (
     <div className="federal-container">
       <div id="federal-header-container">
