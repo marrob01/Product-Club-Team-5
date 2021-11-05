@@ -3,14 +3,34 @@ import StateData from "../StatePage/StateData";
 import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
 
 const FederalRow = ({ federalContent }) => {
-	@@ -23,31 +22,31 @@
+  // const [isAnimating, setIsAnimating] = useState(false);
+  // const collapseRef = useRef(null);
+  // const contentRef = useRef(null);
+  const [isActive, setIsActive] = useState(false);
+  const [expandNameContainer, setExpandNameContainer] = useState([])
+
+
+  const handleClick = () => {};
+
+  const handleTransition = () => {};
+
+
+  const clickRightArrow = <IoIosArrowForward
+  className="right-arrow" size="30px" color="grey"
+  onClick={() => setExpandNameContainer(!expandNameContainer)}
+/>
+
 const clickDownArrow = <IoIosArrowDown
   className="down-arrown" size="30px" color="grey"
   onClick={() => setExpandNameContainer(!expandNameContainer)}
 />
+
+
+
+
   return (
     // {console.log(content, 'getting the content')}
-    
+
     <div className="accordion">
       <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
                 <div>{!isActive ? clickRightArrow: clickDownArrow}</div>
