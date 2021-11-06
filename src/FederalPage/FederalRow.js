@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import StateData from "../StatePage/StateData";
 import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
 
 const FederalRow = ({ federalContent }) => {
@@ -32,6 +31,8 @@ const clickDownArrow = <IoIosArrowDown
     // {console.log(content, 'getting the content')}
     
     <div className="accordion">
+
+{console.log(federalContent)}
       <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
                 <div>{!isActive ? clickRightArrow: clickDownArrow}</div>
                 <div>
@@ -43,11 +44,11 @@ const clickDownArrow = <IoIosArrowDown
                     {
                         < ul>
                             <li className="recipientNumber">Recipent Name: {federalContent.Recepient_Name}</li>
-                            <li className="cfda">City: {federalContent.Richmond}</li>
+                            <li className="cfda">City: {federalContent.City}</li>
                             <li className="awardId">Country: {federalContent.Country} </li>
                             <li className="starliate">Funding Amount: {federalContent.Total_Award_Amount}</li>
                             <li className="county">Award Description: {federalContent.award_description}</li>
-                            <li className="awardAmount">Award Type: {federalContent.award_Type}</li>
+                            <li className="awardAmount">Award Type: {federalContent.Award_Type}</li>
                             <li className="awardType">Start date: {federalContent.Start_Date}</li>
                             <li className="awardType">End date: {federalContent.End_Date}</li>
                         </ul>
