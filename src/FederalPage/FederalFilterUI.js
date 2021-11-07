@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { IoIosArrowForward, IoIosArrowDown } from 'react-icons/io';
 
-function StateFilterUI({ filter }) {
+function FederalFilterUI({ filter }) {
 
     const [isClicked, setIsClicked] = useState(false)
     const [isActive, setIsActive] = useState(false)
@@ -62,7 +62,7 @@ function StateFilterUI({ filter }) {
                     <div>
                         {filter}
                         <div classname="input">
-                            <input name="grantee_name" type="text" value={value} onChange={handleSearch} />
+                            <input name="recepient_name" type="text" value={value} onChange={handleSearch} />
                         </div>
                     </div>
                 </form>
@@ -71,4 +71,4 @@ function StateFilterUI({ filter }) {
     )
 }
 
-export default StateFilterUI
+export default FederalFilterUI

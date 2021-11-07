@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./StateData.css";
 import { useState, useEffect } from "react";
@@ -8,6 +9,8 @@ function StateData() {
   const [stateData, setStateData] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
   const [numberOfPages, setNumberOfPages] = useState(0);
+  
+   const filters = ["Grantee Name", "Grant Number", "Program Name", "City", "County", "State", "Award Fiscal Year", "Award funding"]
 
   const pages = new Array(numberOfPages).fill(null).map((n, i) => i);
 
@@ -45,11 +48,27 @@ function StateData() {
         <h1 className="state-header">ADVANCE STATE DATA SEARCH</h1>
       </div>
       <div className="state-filter-container">
-        <div className="filter-component">
-          <div>
-            <StateFilterUI />
-          </div>
-        </div>
+        <div className="state-filter-container">
+                    <div className="filter-component">
+                        <div className="filter-header">
+                            <h5 >FILTERS</h5>
+                            <hr />
+                        </div>
+                        <div>
+                            {filters.map((filterList) => {
+                                console.log(filterList);
+                                return (
+                                    <div>
+                                        <StateFilterUI filter={filterList} />
+                                    </div>
+                                )
+                            })}
+                        </div>
+                        <div className="filter-submit-btn">
+                            <button className="state-btn">Submit</button>
+                        </div>
+                    </div>
+                </div>
         <div className="state-data-container">
           <div className="state-data-table-container">
             <div id="state-header">
