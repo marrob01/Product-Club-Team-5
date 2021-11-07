@@ -31,6 +31,8 @@ const clickDownArrow = <IoIosArrowDown
     // {console.log(content, 'getting the content')}
     
     <div className="accordion">
+
+{console.log(federalContent)}
       <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
                 <div>{!isActive ? clickRightArrow: clickDownArrow}</div>
                 <div>

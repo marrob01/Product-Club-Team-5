@@ -8,13 +8,17 @@ import StateFilterUI from './StateFilterUI';
 function StateData() {
 
     const [stateData, setStateData] = useState([])
-    
+    const [pageNumber, setPageNumber] = useState(0);
+    const [numberOfPages, setNumberOfPages] = useState(0);
 
     const filters = ["Grantee Name", "Grant Number", "Program Name", "City", "County", "State", "Award Fiscal Year", "Award funding"]
 
+    const pages = new Array(numberOfPages).fill(null).map((n, i) => i);
+
 
     const getStateData = async () => {
-        await fetch('http://localhost:9000/state'
+        await fetch(`http://localhost:9000/state?pageSize=&page=${pageNumber}`
+
 
             , {
                 headers: {
@@ -27,26 +31,18 @@ function StateData() {
                 // console.log(response)
                 return response.json();
             })
-            .then(function (myJson) {
-                // console.log(myJson);
-                setStateData(myJson)
+            .then(({ totalPages, states }) => {
+                console.log(totalPages, states);
+                setStateData(states);
+                setNumberOfPages(totalPages);
             });
     }
 
     useEffect(() => {
         getStateData()
-    }, [])
+    }, [pageNumber])
 
-    const filterList = () => {
-        filters.map((filter) => {
-            <li>{filter}</li>
-        })
-        return (
-            <ul>
-                <li>{filterList}</li>
-            </ul>
-        )
-    }
+
 
     return (
         <div className="state-content-container">
@@ -96,6 +92,19 @@ function StateData() {
                                 </div>
                             )
                         })}
+                    </div>
+                    <div>
+                        {pages.map((pageIndex) => (
+                            <button
+                                className="pagination-button"
+                                onClick={() => setPageNumber(pageIndex)}
+                            >
+                                {pageIndex + 1}
+                            </button>
+                        ))}
+                        <h3 className="page-number-monitor">
+                            Page of {pageNumber + 1}
+                        </h3>
                     </div>
                 </div>
             </div>

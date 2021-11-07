@@ -17,8 +17,8 @@
 #federal-header-container {
   background-color: #0a3b5b;
   color: white;
-  padding: 5px;
-  
+  padding: 10px;
+  font-size: 20px;
 }
 
 #federal-header {
@@ -77,6 +77,21 @@
 
 .table-header {
     font-size: 3vh;
+}
+
+
+.pagination-button {
+  outline: none;
+  border: 1px solid #0a3b5b;
+  color: #0a3b5b;
+  background-color: white;
+  margin: 5px;
+  width: 30px;
+  font-size: 20px;
+}
+
+.page-number-monitor {
+  text-align: center;
 }
 
 .accordion-title {
