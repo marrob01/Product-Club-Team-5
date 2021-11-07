@@ -3,7 +3,106 @@ import './StateData.css'
 import { useState, useEffect } from 'react';
 import StateRow from './StateRow';
 import StateFilterUI from './StateFilterUI';
+
 function StateData() {
+
+    const [stateData, setStateData] = useState([])
+
+    const filters = ["Grantee Name", "Grant Number", "Program Name", "City", "County", "State", "Award Fiscal Year", "Award funding"]
+
+
+    const getStateData = async () => {
+        await fetch('http://localhost:9000/state'
+
+            , {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            }
+        )
+            .then(function (response) {
+                // console.log(response)
+                return response.json();
+            })
+            .then(function (myJson) {
+                // console.log(myJson);
+                setStateData(myJson)
+            });
+    }
+
+    useEffect(() => {
+        getStateData()
+    }, [])
+
+    const filterList = () => {
+        filters.map((filter) => {
+            <li>{filter}</li>
+        })
+        return (
+            <ul>
+                <li>{filterList}</li>
+            </ul>
+        )
+    }
+
+    return (
+        <div className="state-content-container">
+            <div className="state-content-flex">
+                <div className="state-header-container">
+                    <h1 className="state-page-header">ADVANCE STATE DATA SEARCH</h1>
+                </div>
+                <div>
+                    <h3 id="header-description">SPENDING BY PRIME AWARD</h3>
+                </div>
+            </div>
+            <div className="state-data-container">
+                <div className="state-filter-container">
+                    <div className="filter-component">
+                        <div className="filter-header">
+                            <h5 >FILTERS</h5>
+                            <hr />
+                        </div>
+                        <div>
+                            {filters.map((filterList) => {
+                                console.log(filterList);
+                                return (
+                                    <div>
+                                        <StateFilterUI filter={filterList} />
+                                    </div>
+                                )
+                            })}
+                        </div>
+                        <div className="filter-submit-btn">
+                            <button className="state-btn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div className="state-data-table-container">
+
+                    <div id="state-header">
+                        <h3 className="select">Select</h3>
+                        <h3 className="name">Name</h3>
+                    </div>
+                    <div className="state-data">
+                        {stateData.map((state) => {
+                            // console.log(state);
+                            return (
+                                <div>
+                                    <StateRow
+                                        state={state} />
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default StateData;
+=======
     const [stateData, setStateData] = useState([])
     // console.log(filters, stateData);
     const getStateData = async () => {

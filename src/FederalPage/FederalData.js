@@ -3,11 +3,15 @@ import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
 import "./FederalData.css";
 import { Link } from "react-router-dom";
 import FederalRow from "./FederalRow";
+import FederalFilterUI from "./FederalFilterUI";
 
 function FederalData() {
   const [federalData, setFederalData] = useState([]);
   const [expandNameContainer, setExpandNameContainer] = useState([]);
   const [show, setShow] = useState(true);
+
+  const federalFilters = ["Recipient Name", "City", "Country", "Award Id", "Start Date", "End Date", "Federal Covid-19 Obligations", "Total Award Amount", "cfda title", "Award Description", "Award Type"]
+
 
   const getFederalData = async () => {
     await fetch(
@@ -54,7 +58,16 @@ function FederalData() {
 
   const closeNameContainer = () => setExpandNameContainer(false);
 
-
+  const filterList = () => {
+    federalFilters.map((filter) => {
+      <li>{filter}</li>
+    })
+    return (
+      <ul>
+        <li>{filterList}</li>
+      </ul>
+    )
+  }
 
   return (
     <div className="federal-container">
@@ -63,7 +76,28 @@ function FederalData() {
       </div>
 
       <div className="federal-data-container">
-        <div className="federal-filter-container"></div>
+        <div className="federal-filter-container">
+          <div className="filter-component">
+            <div className="filter-header">
+              <h5 >FILTERS</h5>
+              <hr />
+            </div>
+            <div>
+              {federalFilters.map((filterList) => {
+                console.log(filterList);
+                return (
+                  <div>
+                    <FederalFilterUI filter={filterList} />
+                  </div>
+                )
+              })}
+            </div>
+            <div className="filter-submit-btn">
+              <button className="federal-btn" >Submit</button>
+            </div>
+          </div>
+
+        </div>
 
         <div id="data-table-container">
           <div>
@@ -74,17 +108,17 @@ function FederalData() {
             <h3 className="table-header">Name</h3>
           </div>
           {<div>
-      {federalData.map((federalContent, i) => {
-         return (
-           <div key={i}> 
-         <FederalRow
-          federalContent={federalContent}
-          />
-          </div>
-         )
-          
-      })}
-      </div>}
+            {federalData.map((federalContent, i) => {
+              return (
+                <div key={i}>
+                  <FederalRow
+                    federalContent={federalContent}
+                  />
+                </div>
+              )
+
+            })}
+          </div>}
         </div>
       </div>
     </div>

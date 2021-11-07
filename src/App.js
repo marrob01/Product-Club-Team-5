@@ -14,6 +14,7 @@ import Contact from './Contactpage/Contact';
 import StateData from './StatePage/StateData';
 import FederalData from './FederalPage/FederalData';
 import About from './About/About';
+import './About/About.css';
 
 
 
