@@ -58,17 +58,17 @@ function FederalData() {
 
   const closeNameContainer = () => setExpandNameContainer(false);
 
-  const filterList = () => {
-    federalFilters.map((filter) => {
-      <li>{filter}</li>
-    })
-    return (
-      <ul>
-        <li>{filterList}</li>
-      </ul>
-    )
-  }
-
+  // const filterList = () => {
+  //   federalFilters.map((filter) => {
+  //     <li>{filter}</li>
+  //   })
+  //   return (
+  //     <ul>
+  //       <li>{filterList}</li>
+  //     </ul>
+  //   )
+  // }
+  //   console.log(filterList());
   return (
     <div className="federal-container">
       <div id="federal-header-container">

@@ -8,6 +8,7 @@ import StateFilterUI from './StateFilterUI';
 function StateData() {
 
     const [stateData, setStateData] = useState([])
+    
 
     const filters = ["Grantee Name", "Grant Number", "Program Name", "City", "County", "State", "Award Fiscal Year", "Award funding"]
 

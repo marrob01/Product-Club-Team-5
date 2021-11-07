@@ -2,7 +2,6 @@
 import './style/App.css'
 import './Contactpage/Contact.css'
 import Footer from './Global/Footer'
-import Filter from './Filter/FilterFunction'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from './Global/Nav.js'
 import Test from './Test.js'
@@ -62,7 +61,6 @@ function App(props) {
           </Switch>
 
           <Footer />
-          <Filter />
         </BrowserRouter >
         
     </div>
