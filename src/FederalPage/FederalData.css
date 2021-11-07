@@ -110,8 +110,21 @@ hr {
   font-size: 12px;
 }
 
-button {
-  padding: 5px;
+.federal-btn {
+  position: relative;
+  background-color: #0A3B5B;
+  color: white;
+  margin-left: 5%;
+  font-size: 15px;
+  display: block;
+  border-radius: 1px;
+  border: none;
+  outline: none;
+  height: 5vh;
+  width: 8vw;
+  padding: 0;
+  overflow: hidden;
+  transition: 1s all ease;
 }
 
 .input {

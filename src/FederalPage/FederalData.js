@@ -93,7 +93,7 @@ function FederalData() {
               })}
             </div>
             <div className="filter-submit-btn">
-              <button >Submit</button>
+              <button className="federal-btn" >Submit</button>
             </div>
           </div>
 

@@ -1,46 +1,60 @@
 .contact-page {
+    margin: 10%;
     border: 2px solid rgb(226, 219, 219);
     box-shadow: 5px 3px 5px 3px lightgrey;
-    margin: 10%;
     width: 80%;
 }
 
+.contact-container {
+    display: flex;
+    gap: 40px;
+}
+
+.form-container {
+    display: flex;
+}
+
 .contact-header {
-    margin-top: 20px;
-    text-align: center;
+    display: flex;
+    margin-bottom: 30px;
+    margin-left: 30%;
+    padding: 10%;
     text-decoration: underline;
     line-height: 2em;
     text-underline-position: under;
-    color: #407BFF;
+    color: #4A99D3;
 }
 
 .contact-message {
     padding-bottom: 1rem;
 }
 
-.contact-container {
+.form-grid {
     display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 40px;
-
-}
-
-#button {
-    background-color: #407BFF;
+    grid-template-columns: 500px 500px;
 }
 
 .form {
-    margin-top: 20%;
-    margin-left: 5%;
-    padding: 30px;
+    margin-left: 10%;
+    padding: 10px;
     line-height: 2em;
-    grid-column-start: 1;
-    grid-column-end: 3;
+    /* border: 2px solid red; */
 }
 
-.gap-2 {}
+#button {
+    background-color: #4A99D3;
+}
 
 .icon-info-map {
-    margin-top: 30%;
+    /* border: 2px solid red; */
     line-height: 2em;
+    padding: 10px;
+    margin-left: 30%;
+}
+
+.map-grid {
+    margin-top: 10%;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
 }

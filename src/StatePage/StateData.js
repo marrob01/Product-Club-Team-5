@@ -49,8 +49,13 @@ function StateData() {
 
     return (
         <div className="state-content-container">
-            <div className="state-header-container">
-                <h1 className="state-page-header">ADVANCE STATE DATA SEARCH</h1>
+            <div className="state-content-flex">
+                <div className="state-header-container">
+                    <h1 className="state-page-header">ADVANCE STATE DATA SEARCH</h1>
+                </div>
+                <div>
+                    <h3 id="header-description">SPENDING BY PRIME AWARD</h3>
+                </div>
             </div>
             <div className="state-data-container">
                 <div className="state-filter-container">
@@ -70,14 +75,12 @@ function StateData() {
                             })}
                         </div>
                         <div className="filter-submit-btn">
-                            <button >Submit</button>
+                            <button className="state-btn">Submit</button>
                         </div>
                     </div>
                 </div>
                 <div className="state-data-table-container">
-                    <div>
-                        <h3 id="header-description">SPENDING BY PRIME AWARD</h3>
-                    </div>
+
                     <div id="state-header">
                         <h3 className="select">Select</h3>
                         <h3 className="name">Name</h3>

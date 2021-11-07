@@ -42,19 +42,25 @@
 }
 
 .state-header-container{
-    background-color: #0A3B5B;
+    display: flex;
     width: 100vw;
+}
+
+.state-content-flex{
+    display: flex;
+    background-color: #0A3B5B;
     padding: 5px;
 }
 
 .state-page-header{
-    margin-left: 5%;
+    margin-left: 2%;
     font-size: 30px;
     font-weight: normal;
     font-family: Helvetica,
     sans-serif;
     color: white;
 }
+
 
 .state-data-container {
     display: grid;
@@ -63,8 +69,10 @@
 
 #header-description {
     display: flex;
-    margin-left: 65%;
-    font-size: 15px;
+    color: white;
+    margin-top: 15px;
+    margin-left: -18%;
+    font-size: 12px;
     font-weight: bold;
 }
 
@@ -122,8 +130,21 @@ hr{
     font-size: 12px;
 }
 
-button{
-    padding: 5px;
+.state-btn {
+   position: relative;
+   background-color: #0A3B5B;
+   color: white;
+   margin-left: 5%;
+   font-size: 15px;
+   display: block;
+   border-radius: 1px;
+   border: none;
+   outline: none;
+   height: 5vh;
+   width: 8vw;
+   padding: 0;
+   overflow: hidden;
+   transition: 1s all ease;
 }
 
 .input{
