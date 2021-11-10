@@ -87,10 +87,30 @@
   margin: 5px;
   width: 30px;
   font-size: 20px;
+  border-radius: 2px;
+}
+
+.previous-next-button {
+  outline: none;
+  border: 1px solid #0a3b5b;
+  color: #0a3b5b;
+  background-color: white;
+  margin: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 20px;
+  border-radius: 2px;
+}
+
+.paging-number-field {
+  text-align: center;
+  margin-top: 10px;
 }
 
 .page-number-monitor {
   text-align: center;
+}
+
 
 .accordion-title {
   display: flex;
@@ -142,5 +162,5 @@ hr {
 }
 
 .input {
-  font-size: 12px;=
+  font-size: 12px;
 }
