@@ -22,7 +22,7 @@ function FederalData({ filterList }) {
 
   const getFederalData = async (urlParams) => {
     await fetch(
-      `http://localhost:9000/federal?pageSize=&page=${pageNumber}${urlParams}`,
+      `https://covid-19-spending.herokuapp.com//federal?pageSize=&page=${pageNumber}${urlParams}`,
 
       {
         headers: {

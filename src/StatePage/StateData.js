@@ -20,7 +20,7 @@ function StateData() {
     const filters = ["Grantee Name", "Grant Number", "Program Name", "City", "County", "State", "Award Fiscal Year", "Award funding"]
 
     const getStateData = async (urlParams) => {
-        await fetch(`http://localhost:9000/state?pageSize=&page=${pageNumber}${urlParams}`
+        await fetch(`https://covid-19-spending.herokuapp.com//state?pageSize=&page=${pageNumber}${urlParams}`
 
 
             , {
