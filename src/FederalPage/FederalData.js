@@ -147,7 +147,7 @@ function FederalData({ filterList }) {
               })}
             </div>
           }
-          <div className="paging-number-field">
+         <div className="paging-number-field">
           <button  className="previous-next-button" onClick={() => setPageNumber(pageNumber - 1)}>Previous</button>
             {pages.slice(lowerBoundary, upperBoundary).map((pageIndex) => (
               <button
