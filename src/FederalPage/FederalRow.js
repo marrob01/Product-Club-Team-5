@@ -42,7 +42,7 @@ const clickDownArrow = <IoIosArrowDown
             {isActive &&
                 <div className="accordion-content">
                     {
-                        < ul>
+          < ul className="data-list">
                             <li className="recipientNumber">Recipent Name: {federalContent.Recepient_Name}</li>
                             <li className="cfda">City: {federalContent.City}</li>
                             <li className="awardId">Country: {federalContent.Country} </li>

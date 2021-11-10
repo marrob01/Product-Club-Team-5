@@ -11,7 +11,7 @@
 
 .federal-data-container {
   display: grid;
-  grid-template-columns: 20% 70%;
+  grid-template-columns: 25% 75%;
 }
 
 #federal-header-container {
@@ -22,42 +22,31 @@
 }
 
 #federal-header {
+  margin-left: 5%;
+  font-size: 30px;
   font-weight: normal;
   font-family: Helvetica, sans-serif;
   
 }
 
-.recipient-container {
-  width: 80vw;
-  padding: 20px;
+.accordion {
   overflow: hidden;
   transition: all 0.3s ease;
-  margin: 0;
   border-top: 1px solid rgb(179, 179, 179);
   border-bottom: 1px solid rgb(179, 179, 179);
 }
-
-/* #individual-recipient-container {
-  background-color: whitesmoke;
-  border-top: 1px solid rgb(179, 179, 179);
-  border-bottom: 1px solid rgb(179, 179, 179);
-} */
-
-/* .recipient-container {
-    max-height: 250px;
-    max-width: 50vw;
-  } */
 
 #header {
   display: flex;
   gap: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ box-shadow: 3px 3px 3px 3px lightgrey;
 }
 
 .spending-name-prime-award {
+    margin-left: 65%;
     text-align: center;
     font-weight: bold;
-    font-size: 3vh;
+    font-size: 15px;
     font-family: Helvetica, sans-serif;
 }
 
@@ -66,13 +55,14 @@
   gap: 20px;
 }
 
-
-#data-table-container {
-  margin: auto;
-}
+/* 
+.filter-component {
+  
+} */
 
 
 .federal-filter-container {
+    display: flex;
     background-color: #E7F5FF;
 }
 
@@ -88,6 +78,7 @@
     font-size: 3vh;
 }
 
+
 .pagination-button {
   outline: none;
   border: 1px solid #0a3b5b;
@@ -96,8 +87,80 @@
   margin: 5px;
   width: 30px;
   font-size: 20px;
+  border-radius: 2px;
+}
+
+.previous-next-button {
+  outline: none;
+  border: 1px solid #0a3b5b;
+  color: #0a3b5b;
+  background-color: white;
+  margin: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 20px;
+  border-radius: 2px;
+}
+
+.paging-number-field {
+  text-align: center;
+  margin-top: 10px;
 }
 
 .page-number-monitor {
   text-align: center;
+}
+
+
+.accordion-title {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+}
+
+.filter-header {
+  padding-top: 15px;
+}
+
+h5 {
+  margin-left: 15%;
+}
+
+hr {
+  margin-left: 0;
+  width: 25vw;
+  border: 1px solid black;
+}
+
+.filter-item {
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  margin-left: 10%;
+}
+
+.filter-submit-btn {
+  margin-left: 5%;
+  padding: 5%;
+  font-size: 12px;
+}
+
+.federal-btn {
+  position: relative;
+  background-color: #0A3B5B;
+  color: white;
+  margin-left: 5%;
+  font-size: 15px;
+  display: block;
+  border-radius: 1px;
+  border: none;
+  outline: none;
+  height: 5vh;
+  width: 8vw;
+  padding: 0;
+  overflow: hidden;
+  transition: 1s all ease;
+}
+
+.input {
+  font-size: 12px;
 }

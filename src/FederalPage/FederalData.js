@@ -1,16 +1,23 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./FederalData.css";
 import FederalRow from "./FederalRow";
+import FederalFilterUI from "./FederalFilterUI";
 
 function FederalData() {
   const [federalData, setFederalData] = useState([]);
   const [show, setShow] = useState(true);
   const [pageNumber, setPageNumber] = useState(0);
   const [numberOfPages, setNumberOfPages] = useState(0);
+  const [upperBoundary, setUpperBoundary] = useState(0);
+  const [lowerBoundary, setLowerBoundary] =  useState(0);
+
 
   const pages = new Array(numberOfPages).fill(null).map((n, i) => i);
 
-  const getFederalData = async () => {
+  const federalFilters = ["Recipient Name", "City", "Country", "Award Id", "Start Date", "End Date", "Federal Covid-19 Obligations", "Total Award Amount", "cfda title", "Award Description", "Award Type"];
+
+
+  const getFederalData = async (e) => {
     await fetch(
       `http://localhost:9000/federal?pageSize=&page=${pageNumber}`,
 
@@ -32,9 +39,42 @@ function FederalData() {
       });
   };
 
+
+  // resets page number boundaries
+  const getOuterBounds = () => {
+
+
+          if(pageNumber < 5) {
+            setUpperBoundary(10)
+            setLowerBoundary(0)
+          } else if (numberOfPages - 5 < pageNumber) {
+            setUpperBoundary(numberOfPages)
+            setLowerBoundary(numberOfPages - 10)
+          } else {
+            setUpperBoundary(pageNumber + 6)
+            setLowerBoundary(pageNumber - 4)
+          }
+
+          // prevent previous from working when Im at page one
+          // prevent next from working when at the total amount of pages
+  }  
+
+
+
   useEffect(() => {
     getFederalData();
+
+    getOuterBounds();
+
   }, [pageNumber]);
+
+
+ 
+
+
+
+
+
 
   return (
     <div className="federal-container">
@@ -43,7 +83,29 @@ function FederalData() {
       </div>
 
       <div className="federal-data-container">
-        <div className="federal-filter-container"></div>
+        <div className="federal-filter-container">
+          <div className="filter-component">
+            <div className="filter-header">
+              <h5 >FILTERS</h5>
+              <hr />
+            </div>
+
+            <div>
+              {federalFilters.map((filterList) => {
+                console.log(filterList);
+                return (
+                  <div>
+                    <FederalFilterUI filter={filterList} />
+                  </div>
+                )
+              })}
+            </div>
+            <div className="filter-submit-btn">
+              <button className="federal-btn" >Submit</button>
+            </div>
+          </div>
+
+        </div>
 
         <div id="data-table-container">
           <div>
@@ -66,8 +128,9 @@ function FederalData() {
               })}
             </div>
           }
-          <div>
-            {pages.map((pageIndex) => (
+          <div className="paging-number-field">
+          <button  className="previous-next-button" onClick={() => setPageNumber(pageNumber - 1)}>Previous</button>
+            {pages.slice(lowerBoundary, upperBoundary).map((pageIndex) => (
               <button
                 className="pagination-button"
                 onClick={() => setPageNumber(pageIndex)}
@@ -75,7 +138,8 @@ function FederalData() {
                 {pageIndex + 1}
               </button>
             ))}
-            <h3 className="page-number-monitor">Page of {pageNumber + 1}</h3>
+            <button  className="previous-next-button" onClick={() => setPageNumber(pageNumber + 1)}>Next</button>
+            <h4 className="page-number-monitor">Page of {pageNumber + 1}</h4>
           </div>
         </div>
       </div>
