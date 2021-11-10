@@ -7,11 +7,10 @@ function About() {
                 <h1>About Our Website</h1>
             </div>
             <div className="about-info">
-                <p>Id ullamco dolor exercitation sunt do occaecat. Non ad Lorem proident labore nulla Lorem in commodo laboris deserunt. Officia ea consequat pariatur exercitation cupidatat in amet ullamco ex ex incididunt Lorem. Non reprehenderit amet ut cillum ex ex incididunt aliquip aliquip. Velit exercitation adipisicing aliquip consectetur et irure sunt elit in do magna. Lorem eu amet tempor qui aute aliqua velit. Commodo velit esse nulla et cupidatat ut.</p>
+                <p>With the interest of the people in mind, the website COVID19SPENDING.ORG was a prototype to create a product that serves the people and creates awareness among the people. One of our core objectives for our product is to show the citizens how the funds for Covid-19 are being spent with more ease of access to information.</p>
 
-                <p>Sunt do minim nisi veniam cillum laboris nulla reprehenderit sit voluptate. Eu velit adipisicing deserunt commodo. Amet proident nulla enim minim qui dolor labore tempor ad. Aliqua aliquip dolor in excepteur ut exercitation aliquip deserunt. Veniam non ullamco in est ipsum incididunt voluptate. Officia aute mollit tempor quis esse. Eu cupidatat in fugiat sint quis excepteur id.</p>
-
-                <p> Officia ut ea deserunt laboris id enim Lorem pariatur magna tempor aute cupidatat aliqua culpa. Irure consequat commodo ullamco consectetur nostrud commodo minim id elit consectetur enim quis nisi ad. Ipsum proident adipisicing cupidatat cillum. Magna ex aliqua labore sint voluptate excepteur enim ex ad ad do magna. Et ad sunt eiusmod cillum qui cillum. Sunt consectetur reprehenderit qui fugiat aliquip mollit reprehenderit.</p>
+                <p>Building trust between the government and the people is another core objective of our product, building trust between the people and the government is something that requires one step at a time, and our product is just another step, with reliable data sources and top tier data quality, which ensures our data is 100% accurate
+                    All of our data is licensed from the U.S. Department of the Treasury, Bureau of the Fiscal Service which is committed to providing open data to enable effective tracking of federal spending. The data on this site is available to copy, adapt, redistribute, or otherwise use for non-commercial or for commercial purposes, subject to the Limitation on Permissible Use of Dun & Bradstreet, Inc.</p>
             </div>
         </div>
     )

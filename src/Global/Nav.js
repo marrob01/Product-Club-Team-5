@@ -3,7 +3,7 @@ import { TopNaVData } from "./TopNavData.js"
 import '../style/Nav.css'
 import Image from "./covidSpending.png"
 
-const logo = <img classname="logo" src={Image} alt="Covid-19" style={{ width: "200px", height:"200px" }} />
+const logo = <img className="logo" src={Image} alt="Covid-19" style={{ width: "200px", height:"200px" }} />
 
 const Navigation = () => {
 
@@ -17,8 +17,8 @@ const Navigation = () => {
           {TopNaVData.map((item, index) => {
             console.log(index);
             return (
-              <a className="a-nav" href={item.path} >
-                <li key={index} className="nav-text">
+              <a key={index} className="a-nav" href={item.path} >
+                <li className="nav-text">
                   {item.title}
                 </li>
               </a>

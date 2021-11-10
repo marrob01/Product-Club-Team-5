@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { IoIosArrowForward, IoIosArrowDown } from 'react-icons/io';
 
-function StateFilterUI({ filter }) {
+function StateFilterUI({ stateList }) {
 
-    const [isClicked, setIsClicked] = useState(false)
     const [isActive, setIsActive] = useState(false)
-    const [value, setValue] = useState("")
+    const [valueInput, setValueInput] = useState("")
 
+    const queryParam = stateList.replace(" ", "_")
 
     const handleClick = () => {
         if (clickRightArrow) {
@@ -26,22 +26,11 @@ function StateFilterUI({ filter }) {
         className="filter-down-arrown" size="20px" color="grey" onClick={handleClick}
     />
 
-    const clicked = (e) => {
-        e.preventDefault()
-        setIsClicked(true)
+
+    const handleSearchInput = (e) => {
+        setValueInput(e.target.value)
+        console.log(valueInput);
     }
-
-    const handleSearch = (e) => {
-        setValue(e.target.value)
-
-    }
-
-    const handleOnSubmit = (e) => {
-        e.preventDefault()
-        console.log(value);
-    }
-
-    console.log(value);
 
 
     return (
@@ -52,20 +41,16 @@ function StateFilterUI({ filter }) {
                 </div>
             </div>
             {!isActive ?
-                <form className="filter">
                     <label>
-                        {filter}
+                        {stateList}
                     </label>
-                </form>
                 :
-                <form className="filter" onSubmit={handleOnSubmit}>
                     <div>
-                        {filter}
-                        <div classname="input">
-                            <input name="grantee_name" type="text" value={value} onChange={handleSearch} />
+                        {stateList}
+                        <div className="input">
+                        <input name={queryParam} type="text" value={valueInput} onChange={handleSearchInput} />
                         </div>
                     </div>
-                </form>
             }
         </div>
     )

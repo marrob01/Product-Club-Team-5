@@ -1,11 +1,23 @@
+* {
+    margin: 0;
+}
+
+.about-page{
+    margin: 10%;
+    width: 80%;
+    border: 5px solid #0A3B5B;
+    box-shadow: 5px 3px 5px 3px rgb(100, 99, 99);
+}
 
 .about-title {
+    margin-top: 5%;
     text-align: center;
+    color: #0A3B5B;
 }
 
 .about-info {
-    margin-left: 5%;
+    margin-left: 10%;
     padding: 50px;
     text-align: justify;
-    width: 90%;
+    width: 80%;
 }

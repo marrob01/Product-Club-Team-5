@@ -9,24 +9,40 @@
   padding: 0;
 }
 
+#federal-header-container {
+ display: flex;
+ width: 100vw;
+}
+
+
+.federal-content-flex {
+  display: flex;
+  color: white ;
+  background-color: #0A3B5B;
+  padding: 5px;
+}
+
+
+#federal-header {
+  margin-left: 2%;
+  font-size: 30px;
+  font-weight: normal;
+  font-family: Helvetica, sans-serif;  
+}
+
+
+.spending-name-prime-award {
+  display: flex;
+  margin-left: -18%;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: Helvetica, sans-serif;
+}
+
 .federal-data-container {
   display: grid;
   grid-template-columns: 25% 75%;
-}
-
-#federal-header-container {
-  background-color: #0a3b5b;
-  color: white;
-  padding: 10px;
-  font-size: 20px;
-}
-
-#federal-header {
-  margin-left: 5%;
-  font-size: 30px;
-  font-weight: normal;
-  font-family: Helvetica, sans-serif;
-  
 }
 
 .accordion {
@@ -41,14 +57,6 @@
   padding: 10px;
   gap: 10px;
  box-shadow: 3px 3px 3px 3px lightgrey;
-}
-
-.spending-name-prime-award {
-    margin-left: 65%;
-    text-align: center;
-    font-weight: bold;
-    font-size: 15px;
-    font-family: Helvetica, sans-serif;
 }
 
 #recipient-name-section {

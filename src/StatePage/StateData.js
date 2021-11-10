@@ -6,18 +6,18 @@ import StateFilterUI from './StateFilterUI';
 
 
 function StateData() {
-
+   
     const [stateData, setStateData] = useState([])
     const [pageNumber, setPageNumber] = useState(0);
-    const [numberOfPages, setNumberOfPages] = useState(0);
+    const [numberOfPages, setNumberOfPages] = useState(0)
+    const [valueInput, setValueInput] = useState("");
+    
+    const pages = new Array(numberOfPages).fill(null).map((n, i) => i);
 
     const filters = ["Grantee Name", "Grant Number", "Program Name", "City", "County", "State", "Award Fiscal Year", "Award funding"]
 
-    const pages = new Array(numberOfPages).fill(null).map((n, i) => i);
-
-
-    const getStateData = async () => {
-        await fetch(`http://localhost:9000/state?pageSize=&page=${pageNumber}`
+    const getStateData = async (urlParams) => {
+        await fetch(`http://localhost:9000/state?pageSize=&page=${pageNumber}${urlParams}`
 
 
             , {
@@ -28,7 +28,6 @@ function StateData() {
             }
         )
             .then(function (response) {
-                // console.log(response)
                 return response.json();
             })
             .then(({ totalPages, states }) => {
@@ -38,11 +37,30 @@ function StateData() {
             });
     }
 
+    const handleSearchInput = (e) => {
+        setValueInput(e.target.value)
+        console.log(valueInput);
+    }
+
     useEffect(() => {
-        getStateData()
+        getStateData("")
     }, [pageNumber])
 
+    const getResultData = (e) => {
+        let urlParams = ""
+        Object.keys(e.target).forEach(input => {
+            const name = e.target[input].name
+            const value = e.target[input].value
+            if (name && value) {
+                console.log(value, name);
+                const param = `${name}=${value}`
+                urlParams += `&${param}`
+            }
 
+        })
+        getStateData(urlParams)
+        e.preventDefault()
+    }
 
     return (
         <div className="state-content-container">
@@ -61,41 +79,42 @@ function StateData() {
                             <h5 >FILTERS</h5>
                             <hr />
                         </div>
-                        <div>
-                            {filters.map((filterList) => {
-                                console.log(filterList);
+                        <form className="filter" onSubmit={getResultData}>
+                            {filters.map((stateList, i) => {
                                 return (
-                                    <div>
-                                        <StateFilterUI filter={filterList} />
+                                    <div key={i}>
+                                        <StateFilterUI stateList={stateList} state={stateData} valueInput={valueInput} onChange={handleSearchInput} />
                                     </div>
                                 )
                             })}
-                        </div>
-                        <div className="filter-submit-btn">
-                            <button className="state-btn">Submit</button>
-                        </div>
+                            <div className="filter-submit-btn">
+                                <button className="state-btn">Submit</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div className="state-data-table-container">
-
                     <div id="state-header">
                         <h3 className="select">Select</h3>
                         <h3 className="name">Name</h3>
                     </div>
-                    <div className="state-data">
-                        {stateData.map((state) => {
-                            // console.log(state);
-                            return (
-                                <div>
-                                    <StateRow
-                                        state={state} />
-                                </div>
-                            )
-                        })}
-                    </div>
+                    {
+                        <div className="state-data">
+                            {stateData.map((state, i) => {
+                                // console.log(state);
+                                return (
+                                    <div key={i}>
+                                        <StateRow
+                                            state={state} />
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    }
                     <div>
-                        {pages.map((pageIndex) => (
+                        {pages.map((pageIndex, i) => (
                             <button
+                                key={i}
                                 className="pagination-button"
                                 onClick={() => setPageNumber(pageIndex)}
                             >

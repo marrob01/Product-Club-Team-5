@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import { IoIosArrowForward, IoIosArrowDown } from 'react-icons/io';
 
-function FederalFilterUI({ filter }) {
 
-    const [isClicked, setIsClicked] = useState(false)
+
+function FederalFilterUI({ filterList }) {
+
+    
     const [isActive, setIsActive] = useState(false)
-    const [value, setValue] = useState("")
-
+    const [valueInput, setValueInput] = useState("")
+   
+   
+    const queryParam = filterList.replace(" ", "_")
 
     const handleClick = () => {
         if (clickRightArrow) {
@@ -26,25 +30,14 @@ function FederalFilterUI({ filter }) {
         className="filter-down-arrown" size="20px" color="grey" onClick={handleClick}
     />
 
-    const clicked = (e) => {
-        e.preventDefault()
-        setIsClicked(true)
-    }
+    const handleSearchInput = (e) => {
+    setValueInput(e.target.value)
+    console.log(valueInput);
+  }
 
-    const handleSearch = (e) => {
-        setValue(e.target.value)
-
-    }
-
-    const handleOnSubmit = (e) => {
-        e.preventDefault()
-        console.log(value);
-    }
-
-    console.log(value);
-
-
+    
     return (
+        
         <div className="filter-container">
             <div className="filter-item">
                 <div className="filter-title" onClick={() => setIsActive(!isActive)}>
@@ -52,21 +45,21 @@ function FederalFilterUI({ filter }) {
                 </div>
             </div>
             {!isActive ?
-                <form className="filter">
+                
                     <label>
-                        {filter}
+                        {filterList}
                     </label>
-                </form>
                 :
-                <form className="filter" onSubmit={handleOnSubmit}>
+               
                     <div>
-                        {filter}
-                        <div classname="input">
-                            <input name="recepient_name" type="text" value={value} onChange={handleSearch} />
+                        {filterList}
+                        <div className="input">
+                            <input name={queryParam} type="text" value={valueInput} onChange={handleSearchInput} />
                         </div>
                     </div>
-                </form>
+             
             }
+            
         </div>
     )
 }
