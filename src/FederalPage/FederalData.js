@@ -9,6 +9,8 @@ function FederalData({ filterList }) {
   const [pageNumber, setPageNumber] = useState(0);
   const [numberOfPages, setNumberOfPages] = useState(0);
   const [valueInput, setValueInput] = useState("")
+  const [upperBoundary, setUpperBoundary] = useState(0);
+  const [lowerBoundary, setLowerBoundary] =  useState(0);
 
 
   const pages = new Array(numberOfPages).fill(null).map((n, i) => i);
@@ -42,6 +44,39 @@ function FederalData({ filterList }) {
     setValueInput(e.target.value)
     console.log(valueInput);
   }
+
+  // resets page number boundaries
+  const getOuterBounds = () => {
+
+
+          if(pageNumber < 5) {
+            setUpperBoundary(10)
+            setLowerBoundary(0)
+          } else if (numberOfPages - 5 < pageNumber) {
+            setUpperBoundary(numberOfPages)
+            setLowerBoundary(numberOfPages - 10)
+          } else {
+            setUpperBoundary(pageNumber + 6)
+            setLowerBoundary(pageNumber - 4)
+          }
+
+          // prevent previous from working when Im at page one
+          // prevent next from working when at the total amount of pages
+  }  
+
+
+
+  useEffect(() => {
+    getFederalData();
+
+    getOuterBounds();
+
+  }, [pageNumber]);
+
+
+ 
+
+
 
   useEffect(() => {
     getFederalData("");
@@ -112,17 +147,18 @@ function FederalData({ filterList }) {
               })}
             </div>
           }
-          <div>
-            {pages.map((pageIndex, i) => (
+          <div className="paging-number-field">
+          <button  className="previous-next-button" onClick={() => setPageNumber(pageNumber - 1)}>Previous</button>
+            {pages.slice(lowerBoundary, upperBoundary).map((pageIndex) => (
               <button
-              key={i}
                 className="pagination-button"
                 onClick={() => setPageNumber(pageIndex)}
               >
                 {pageIndex + 1}
               </button>
             ))}
-            <h3 className="page-number-monitor">Page of {pageNumber + 1}</h3>
+            <button  className="previous-next-button" onClick={() => setPageNumber(pageNumber + 1)}>Next</button>
+            <h4 className="page-number-monitor">Page of {pageNumber + 1}</h4>
           </div>
         </div>
       </div>
