@@ -3,23 +3,26 @@ import "./FederalData.css";
 import FederalRow from "./FederalRow";
 import FederalFilterUI from "./FederalFilterUI";
 
-function FederalData() {
+function FederalData({ filterList }) {
   const [federalData, setFederalData] = useState([]);
-  const [show, setShow] = useState(true);
+  // const [show, setShow] = useState(true);
   const [pageNumber, setPageNumber] = useState(0);
   const [numberOfPages, setNumberOfPages] = useState(0);
+  const [valueInput, setValueInput] = useState("")
   const [upperBoundary, setUpperBoundary] = useState(0);
   const [lowerBoundary, setLowerBoundary] =  useState(0);
 
 
   const pages = new Array(numberOfPages).fill(null).map((n, i) => i);
 
-  const federalFilters = ["Recipient Name", "City", "Country", "Award Id", "Start Date", "End Date", "Federal Covid-19 Obligations", "Total Award Amount", "cfda title", "Award Description", "Award Type"];
+  const federalFilters = ["Recipient Name", "City", "Country", "Award Id", "Start Date", "End Date", "Total Award Amount", "cfda title", "Award Description", "Award Type"]
+
+  
 
 
-  const getFederalData = async (e) => {
+  const getFederalData = async (urlParams) => {
     await fetch(
-      `http://localhost:9000/federal?pageSize=&page=${pageNumber}`,
+      `http://localhost:9000/federal?pageSize=&page=${pageNumber}${urlParams}`,
 
       {
         headers: {
@@ -29,16 +32,18 @@ function FederalData() {
       }
     )
       .then(function (response) {
-        console.log(response);
         return response.json();
       })
       .then(({ totalPages, federal }) => {
-        console.log(totalPages, federal);
         setFederalData(federal);
         setNumberOfPages(totalPages);
       });
   };
 
+  const handleSearchInput = (e) => {
+    setValueInput(e.target.value)
+    console.log(valueInput);
+  }
 
   // resets page number boundaries
   const getOuterBounds = () => {
@@ -73,15 +78,38 @@ function FederalData() {
 
 
 
+  useEffect(() => {
+    getFederalData("");
+  }, []);
 
+  
+  const getResultData = (e) => {
+    let urlParams = ""
+    Object.keys(e.target).forEach(input => {
+      const name = e.target[input].name
+      const value = e.target[input].value
+      if(name && value){
+        const param = `${name}=${value.toUpperCase()}`
+        urlParams += `&${param}`
+      }
 
+    })
+    getFederalData(urlParams)
+    e.preventDefault()
+  }
 
   return (
     <div className="federal-container">
-      <div id="federal-header-container">
-        <h1 id="federal-header">ADVANCED FEDERAL DATA SEARCH</h1>
+      <div className="federal-content-flex">
+        <div id="federal-header-container">
+          <h1 id="federal-header">ADVANCED FEDERAL DATA SEARCH</h1>
+        </div>
+        <div>
+          <h3 className="spending-name-prime-award">
+            SPENDING BY PRIME AWARD
+          </h3>
+        </div>
       </div>
-
       <div className="federal-data-container">
         <div className="federal-filter-container">
           <div className="filter-component">
@@ -89,30 +117,21 @@ function FederalData() {
               <h5 >FILTERS</h5>
               <hr />
             </div>
-
-            <div>
-              {federalFilters.map((filterList) => {
-                console.log(filterList);
+            <form className="filter" onSubmit={getResultData}>
+              {federalFilters.map((filterList, i) => {
                 return (
-                  <div>
-                    <FederalFilterUI filter={filterList} />
+                  <div key={i}>
+                    <FederalFilterUI filterList={filterList} federalContent={federalData} valueInput={valueInput} onChange={handleSearchInput}/>
                   </div>
                 )
               })}
-            </div>
-            <div className="filter-submit-btn">
-              <button className="federal-btn" >Submit</button>
-            </div>
+              <div className="filter-submit-btn">
+                <button className="federal-btn" type="submit">Submit</button>
+              </div>
+            </form>
           </div>
-
         </div>
-
         <div id="data-table-container">
-          <div>
-            <h3 className="spending-name-prime-award">
-              SPENDING BY PRIME AWARD
-            </h3>
-          </div>
           <div id="header">
             <h3 className="table-header">Select</h3>
             <h3 className="table-header">Name</h3>

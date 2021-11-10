@@ -61,12 +61,6 @@
     color: white;
 }
 
-
-.state-data-container {
-    display: grid;
-    grid-template-columns: 25% 75%;
-}
-
 #header-description {
     display: flex;
     color: white;
@@ -76,6 +70,10 @@
     font-weight: bold;
 }
 
+.state-data-container {
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
 #state-header {
     display: flex;
     padding: 10px; 
