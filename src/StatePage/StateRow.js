@@ -4,7 +4,7 @@ import { IoIosArrowForward, IoIosArrowDown } from 'react-icons/io';
 const StateRow = ({ state }) => {
     const [isActive, setIsActive] = useState(false)
     const [expandNameContainer, setExpandNameContainer] = useState(false);
-    console.log(state);
+    // console.log(state);
     const clickRightArrow = <IoIosArrowForward
         className="right-arrow" size="30px" color="grey"
         onClick={() => setExpandNameContainer(!expandNameContainer)}

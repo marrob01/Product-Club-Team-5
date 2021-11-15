@@ -4,9 +4,8 @@ import './Contactpage/Contact.css'
 import Footer from './Global/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from './Global/Nav.js'
-import Test from './Test.js'
-import { BrowserRouter,  Router, Switch, Route } from "react-router-dom";
-import { useState, useEffect, useHistory } from 'react';
+
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import LandingPage from './Home/LandingPage';
 import './StatePage/StateData.css'
 import Contact from './Contactpage/Contact';
@@ -18,31 +17,7 @@ import './About/About.css';
 
 
 function App(props) {
-  const [user, setUser] = useState(null)
-  const [federalData,setFederalData]=useState([])
-  const [filteredDataList, setFilteredDataList]=useState([])
-  const [searchInput, setSearchInput]=useState([])
-  // const history = useHistory()
 
-  const getFederalData=()=>{
-    fetch('http://localhost:9000/federal'
-  
-    ,{
-      headers : {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       }
-    }
-    )
-      .then(function(response){
-        // console.log(response)
-        return response.json();
-      })
-      .then(function(federalData) {
-        // console.log(federalData);
-        setFederalData(federalData)
-      });
-  }
  
 
 

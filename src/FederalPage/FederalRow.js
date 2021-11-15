@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
 
 const FederalRow = ({ federalContent }) => {
@@ -7,11 +7,6 @@ const FederalRow = ({ federalContent }) => {
   // const contentRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
   const [expandNameContainer, setExpandNameContainer] = useState([])
-
- 
-  const handleClick = () => { };
-
-  const handleTransition = () => { };
 
 
   const clickRightArrow = <IoIosArrowForward

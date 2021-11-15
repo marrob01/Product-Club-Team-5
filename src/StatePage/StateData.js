@@ -6,7 +6,7 @@ import StateFilterUI from './StateFilterUI';
 
 
 function StateData() {
-   
+
     const [stateData, setStateData] = useState([])
     const [pageNumber, setPageNumber] = useState(0);
     const [numberOfPages, setNumberOfPages] = useState(0)
@@ -14,13 +14,13 @@ function StateData() {
     const [upperBoundary, setUpperBoundary] = useState(0);
     const [lowerBoundary, setLowerBoundary] = useState(0);
 
-    
+
     const pages = new Array(numberOfPages).fill(null).map((n, i) => i);
 
     const filters = ["Grantee Name", "Grant Number", "Program Name", "City", "County", "State", "Award Fiscal Year", "Award funding"]
 
     const getStateData = async (urlParams) => {
-        await fetch(`https://covid-19-spending.herokuapp.com//state?pageSize=&page=${pageNumber}${urlParams}`
+        await fetch(`https://covid-19-spending.herokuapp.com/state?pageSize=&page=${pageNumber}${urlParams}`
 
 
             , {
@@ -40,8 +40,8 @@ function StateData() {
             });
     }
 
+    // resets page number boundaries
     const getOuterBounds = () => {
-
 
         if (pageNumber < 5) {
             setUpperBoundary(10)
@@ -58,15 +58,11 @@ function StateData() {
         // prevent next from working when at the total amount of pages
     }
 
-    const handleSearchInput = (e) => {
-        setValueInput(e.target.value)
-        console.log(valueInput);
-    }
 
     useEffect(() => {
         getStateData("")
         getOuterBounds();
-    }, [pageNumber])
+    }, [])
 
     const getResultData = (e) => {
         let urlParams = ""
@@ -82,6 +78,11 @@ function StateData() {
         })
         getStateData(urlParams)
         e.preventDefault()
+    }
+
+    const handleSearchInput = (e) => {
+        setValueInput(e.target.value)
+        console.log(valueInput);
     }
 
     return (
@@ -122,10 +123,10 @@ function StateData() {
                         <h3 className="name">Name</h3>
                     </div>
                     <div className="state-data">
-                        {stateData.map((state) => {
-                            // console.log(state);
+                        {stateData.map((state, i) => {
+                            console.log(state);
                             return (
-                                <div>
+                                <div key={i}>
                                     <StateRow
                                         state={state} />
                                 </div>
@@ -133,7 +134,7 @@ function StateData() {
                         })}
                     </div>
                     <div className="paging-number-field">
-                    <button  className="previous-next-button" onClick={() => setPageNumber(pageNumber - 1)}>Previous</button>
+                        <button className="previous-next-button" onClick={() => setPageNumber(pageNumber - 1)}>Previous</button>
                         {pages.slice(lowerBoundary, upperBoundary).map((pageIndex) => (
                             <button
                                 className="pagination-button"
@@ -142,7 +143,7 @@ function StateData() {
                                 {pageIndex + 1}
                             </button>
                         ))}
-                        <button  className="previous-next-button" onClick={() => setPageNumber(pageNumber + 1)}>Next</button>
+                        <button className="previous-next-button" onClick={() => setPageNumber(pageNumber + 1)}>Next</button>
                         <h4 className="page-number-monitor">
                             Page of {pageNumber + 1}
                         </h4>
